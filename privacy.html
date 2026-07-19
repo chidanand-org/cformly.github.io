@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Cformly</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        h1 { color: #0F6E8C; }
+        h2 { color: #0F6E8C; margin-top: 32px; }
+        a { color: #0F6E8C; }
+        .header { border-bottom: 2px solid #0F6E8C; padding-bottom: 16px; margin-bottom: 24px; }
+        .updated { color: #666; font-size: 0.9rem; }
+        .back { margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <div class="back"><a href="/">&larr; Back to Cformly</a></div>
+    <div class="header">
+        <h1>Privacy Notice & Consent</h1>
+        <p class="updated">Last updated: July 2025 — Compliant with DPDP Act 2023</p>
+    </div>
+
+    <h2>What We Collect</h2>
+    <p>Cformly collects the minimum data needed to file Form C / Form III (foreigner registration) on behalf of your guests:</p>
+    <ul>
+        <li><strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Captured via camera OCR from the passport's MRZ line, processed <strong>on-device</strong>.</li>
+        <li><strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Captured via camera; the image is sent to our backend <strong>only</strong> for OCR extraction and deleted after the request completes (never stored beyond the request lifecycle).</li>
+        <li><strong>Guest photo:</strong> captured and resized to portal limits, stored encrypted on-device.</li>
+        <li><strong>Host/property profile:</strong> establishment name, address, FRRO office jurisdiction, contact details. Entered once, reused across filings.</li>
+    </ul>
+
+    <h2>Where Data Is Stored</h2>
+    <ul>
+        <li><strong>On-device encrypted SQLite database</strong> (key in iOS Keychain / Android Keystore, hardware-backed where available). Never in plaintext, never in cloud backups.</li>
+        <li><strong>Backend (India region):</strong> host accounts, auth tokens. No raw passport/visa images are stored server-side beyond the request lifecycle.</li>
+    </ul>
+
+    <h2>How We Use It</h2>
+    <ul>
+        <li>To pre-fill Form C / Form III fields for review and filing.</li>
+        <li>To generate a filled PDF for manual submission (Tier 1 fallback).</li>
+        <li>To auto-fill the FRRO portal via the browser extension (Tier 2).</li>
+    </ul>
+
+    <h2>Your Rights (DPDP Act 2023)</h2>
+    <ul>
+        <li><strong>Access:</strong> export all your data in machine-readable JSON (Settings &gt; Data &amp; Privacy &gt; Export Data).</li>
+        <li><strong>Correction:</strong> edit any guest field on the Review screen before filing.</li>
+        <li><strong>Erasure:</strong> Settings &gt; Delete Account removes all local PII, keys, and triggers server-side deletion. You receive a confirmation when complete.</li>
+        <li><strong>Grievance:</strong> contact <a href="mailto:dpo@cformly.com">dpo@cformly.com</a> for any privacy concern or data request.</li>
+    </ul>
+
+    <h2>Data Retention</h2>
+    <ul>
+        <li>Document images are auto-purged after successful filing (host-configurable to retain proof). Default: images deleted, structured record retained for history.</li>
+        <li>The encrypted local store persists until you delete the account or uninstall.</li>
+    </ul>
+
+    <h2>Cross-Border Processing</h2>
+    <p>The OCR backend runs in an India region (ap-south-1 / asia-south1). No third-party AI services are used — all OCR runs on self-hosted open-source infrastructure (Tesseract / PaddleOCR). No data leaves India.</p>
+
+    <h2>Consent</h2>
+    <p>By using Cformly, you consent to this data processing. You can withdraw consent at any time by deleting your account. Withdrawal does not affect filings already submitted to the FRRO (those are governed by the FRRO's own policies).</p>
+
+    <h2>Contact</h2>
+    <ul>
+        <li>Data Protection Officer: <a href="mailto:dpo@cformly.com">dpo@cformly.com</a></li>
+        <li>Security: <a href="mailto:security@cformly.com">security@cformly.com</a></li>
+        <li>Support: <a href="mailto:support@cformly.com">support@cformly.com</a></li>
+    </ul>
+</body>
+</html>
