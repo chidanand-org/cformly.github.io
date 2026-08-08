@@ -19,7 +19,7 @@
   --passport-deep: #0E1F3C;
   --passport-tint: #E7ECF4;
   --marigold: #E9A13B;
-  --marigold-deep: #9A6408;
+  --marigold-deep: #8A5608; /* ≥4.5:1 on paper and marigold-tint */
   --marigold-tint: #F9EEDA;
   --success: #1E7A4E;
   --success-tint: #E3F1E9;
@@ -103,6 +103,29 @@ a:hover { color: var(--primary-deep); text-decoration: underline; }
   outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Navy surfaces need a lighter ring than --primary (WCAG 2.4.11, 3:1). */
+.nav a:focus-visible,
+.brand:focus-visible,
+.footer a:focus-visible {
+  outline-color: var(--marigold);
+}
+
+/* Skip link (WCAG 2.4.1) — visually hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 0 0 12px 0;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+}
+.skip-link:focus-visible {
+  left: 0;
 }
 
 h1, h2, h3, h4 {
@@ -237,6 +260,11 @@ h1.display em {
   font-weight: 700;
   letter-spacing: 0.05em;
 }
+
+/* Marigold fills need dark text in dark mode too (was 1.64:1). */
+@media (prefers-color-scheme: dark) {
+  .brand-mark { color: #0C1419; }
+}
 .nav-links {
   display: flex;
   align-items: center;
@@ -260,6 +288,12 @@ h1.display em {
   color: var(--ink);
 }
 .nav-cta:hover { background: var(--marigold-deep); color: #FFFFFF; }
+
+/* Dark mode: marigold stays light, so the label must go dark (was 1.64:1). */
+@media (prefers-color-scheme: dark) {
+  .nav-cta { color: #0C1419; }
+  .nav-cta:hover { background: var(--marigold-deep); color: #0C1419; }
+}
 
 @media (max-width: 860px) {
   .nav-links { display: none; }
@@ -564,8 +598,8 @@ h1.display em {
   background: linear-gradient(180deg, var(--passport) 0%, var(--passport-deep) 100%);
   color: var(--on-navy);
 }
-.privacy .eyebrow { color: var(--marigold); }
-.privacy .eyebrow::before { background: var(--marigold); }
+.privacy .eyebrow { color: #F2C879; } /* light amber on navy: ~9:1 in both modes */
+.privacy .eyebrow::before { background: #F2C879; }
 .privacy .section-head h2 { color: var(--on-navy); }
 .privacy .section-lede { color: rgba(255, 255, 255, 0.78); }
 @media (prefers-color-scheme: dark) {
@@ -857,6 +891,9 @@ h1.display em {
 }
 .lang-toggle:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.55); }
 .lang-toggle:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
+/* The button carries [hidden] so the no-JS page stays English-only; the
+   display:inline-flex above would defeat it (author styles beat the UA rule). */
+.lang-toggle[hidden] { display: none; }
 .lang-toggle[aria-pressed="true"] {
   background: rgba(255, 255, 255, 0.16);
   border-color: var(--marigold);
@@ -868,4 +905,20 @@ h1.display em {
   /* Keep the nav to brand + toggle on small screens; the conversion CTA
      remains in the hero and the CTA section. */
   .nav-cta { display: none; }
+}
+
+/* ---------- print (legal pages) ---------- */
+@media print {
+  .nav, .btn, .cta-band, .footer, .lang-toggle, .hero-visual {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF;
+    color: #000000;
+  }
+  .section, .legal-main {
+    max-width: 100%;
+    padding: 0;
+  }
+  a { color: #000000; text-decoration: underline; }
 }

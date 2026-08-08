@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n-title="meta.privacyTitle">Privacy Policy — Cformly</title>
   <meta name="description" data-i18n-meta="meta.privacyDesc" content="Cformly privacy notice and consent — DPDP Act 2023 compliant. What we collect, where data is stored, your rights." />
+  <meta property="og:title" content="Privacy Policy — Cformly" />
+  <meta property="og:description" content="Cformly privacy notice and consent — DPDP Act 2023 compliant. What we collect, where data is stored, your rights." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cformly.com/privacy.html" />
+  <meta property="og:image" content="https://cformly.com/og-image.png" />
+  <link rel="canonical" href="https://cformly.com/privacy.html" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,6 +18,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="nav">
     <div class="container nav-inner">
@@ -41,7 +48,7 @@
     <h2 data-i18n="privacy.collect">What We Collect</h2>
     <p data-i18n="privacy.collectIntro">Cformly collects the minimum data needed to file Form C / Form III (foreigner registration) on behalf of your guests:</p>
     <ul>
-      <li data-i18n-html="privacy.collect1"><strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Captured via camera OCR from the passport's MRZ line, processed <strong>on-device</strong>.</li>
+      <li data-i18n-html="privacy.collect1"><strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Captured via camera OCR from the passport's MRZ line, processed <strong>on Cformly's own OCR servers in India (not stored)</strong>.</li>
       <li data-i18n-html="privacy.collect2"><strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Captured via camera; the image is sent to our backend <strong>only</strong> for OCR extraction and deleted after the request completes (never stored beyond the request lifecycle).</li>
       <li data-i18n-html="privacy.collect3"><strong>Guest photo:</strong> captured and resized to portal limits, stored encrypted on-device.</li>
       <li data-i18n-html="privacy.collect4"><strong>Host/property profile:</strong> establishment name, address, FRRO office jurisdiction, contact details. Entered once, reused across filings.</li>
@@ -56,7 +63,7 @@
     <h2 data-i18n="privacy.howUsed">How We Use It</h2>
     <ul>
       <li data-i18n="privacy.use1">To pre-fill Form C / Form III fields for review and filing.</li>
-      <li data-i18n="privacy.use2">To generate a filled PDF for manual submission (Tier 1 fallback).</li>
+      <li data-i18n="privacy.use2">To copy the filled fields and paste them into the portal manually (Tier 1 fallback).</li>
       <li data-i18n="privacy.use3">To auto-fill the FRRO portal via the browser extension (Tier 2).</li>
     </ul>
 
@@ -70,12 +77,12 @@
 
     <h2 data-i18n="privacy.retention">Data Retention</h2>
     <ul>
-      <li data-i18n="privacy.retention1">Document images are auto-purged after successful filing (host-configurable to retain proof). Default: images deleted, structured record retained for history.</li>
+      <li data-i18n="privacy.retention1">Document photos are processed for OCR and are not stored on Cformly's servers. On your device, record photos stay encrypted until you delete them.</li>
       <li data-i18n="privacy.retention2">The encrypted local store persists until you delete the account or uninstall.</li>
     </ul>
 
     <h2 data-i18n="privacy.crossBorder">Cross-Border Processing</h2>
-    <p data-i18n="privacy.crossBorderBody">The OCR backend runs in an India region (ap-south-1 / asia-south1). No third-party AI services are used — all OCR runs on self-hosted open-source infrastructure (Tesseract / PaddleOCR). No data leaves India.</p>
+    <p data-i18n="privacy.crossBorderBody">The OCR backend runs in an India region (ap-south-1 / asia-south1). No third-party AI services are used — all OCR runs on self-hosted open-source infrastructure (RapidOCR). No data leaves India.</p>
 
     <h2 data-i18n="privacy.consent">Consent</h2>
     <p data-i18n="privacy.consentBody">By using Cformly, you consent to this data processing. You can withdraw consent at any time by deleting your account. Withdrawal does not affect filings already submitted to the FRRO (those are governed by the FRRO's own policies).</p>

@@ -10,6 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cformly.com/" />
   <meta property="og:image" content="https://cformly.com/og-image.png" />
+  <link rel="canonical" href="https://cformly.com/" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Nav: passport-navy instrument band -->
   <header class="nav">
@@ -34,6 +36,8 @@
       <a class="btn nav-cta" href="mailto:support@cformly.com?subject=Early%20access%20—%20Cformly" data-i18n="nav.cta">Get early access</a>
     </div>
   </header>
+
+  <main id="main">
 
   <!-- Hero -->
   <section class="hero">
@@ -107,7 +111,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></svg>
             </span>
             <h3 data-i18n="how.step1Title">Capture</h3>
-            <p data-i18n="how.step1Body">Point the phone camera at the passport and visa. On-device OCR reads the machine-readable zone — no typing, works offline at the desk.</p>
+            <p data-i18n="how.step1Body">Point the phone camera at the passport and visa. Open-source OCR reads the machine-readable zone — no typing, no third-party AI.</p>
           </div>
         </div>
         <div class="step" data-reveal data-delay="100">
@@ -148,8 +152,8 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
           </span>
           <div>
-            <h3 data-i18n="privacy.item1Title">On-device OCR</h3>
-            <p data-i18n="privacy.item1Body">Passports and visas are read on the phone with open-source software. No third-party AI services, no cloud documents.</p>
+            <h3 data-i18n="privacy.item1Title">Open-source OCR</h3>
+            <p data-i18n="privacy.item1Body">Passports and visas are read by open-source software on Cformly's own servers in India — no third-party AI services, and document photos are not stored.</p>
           </div>
         </div>
         <div class="privacy-item" data-reveal data-delay="100">
@@ -235,7 +239,7 @@
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q4">Does it work offline?</summary>
-          <div class="faq-body" data-i18n="faq.a4">Capture and review work fully offline. Filling the portal needs a browser and the extension; the Tier 1 clipboard path covers any other machine.</div>
+          <div class="faq-body" data-i18n="faq.a4">Capturing photos and reviewing records work offline. Extracting fields needs a connection to Cformly's servers; filling the portal needs a browser with the extension, or the Tier 1 clipboard path on any machine.</div>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q5">What is the 24-hour rule?</summary>
@@ -271,6 +275,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -283,21 +289,21 @@
           <p class="footer-blurb" data-i18n="footer.blurb">The 24-hour register for hotel front desks in India. Scan, review, send — on-device and private.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.product">Product</h4>
+          <h3 data-i18n="footer.product">Product</h3>
           <ul>
             <li><a href="#how" data-i18n="nav.how">How it works</a></li>
             <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.legal">Legal</h4>
+          <h3 data-i18n="footer.legal">Legal</h3>
           <ul>
             <li><a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a></li>
             <li><a href="terms.html" data-i18n="footer.terms">Terms of service</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.contact">Contact</h4>
+          <h3 data-i18n="footer.contact">Contact</h3>
           <ul>
             <li><a href="mailto:support@cformly.com">support@cformly.com</a></li>
             <li><a href="mailto:security@cformly.com">security@cformly.com</a></li>
