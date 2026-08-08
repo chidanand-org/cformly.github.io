@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service — Cformly</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px;
-        }
-        h1 { color: #0F6E8C; }
-        h2 { color: #0F6E8C; margin-top: 32px; }
-        a { color: #0F6E8C; }
-        .header { border-bottom: 2px solid #0F6E8C; padding-bottom: 16px; margin-bottom: 24px; }
-        .updated { color: #666; font-size: 0.9rem; }
-        .back { margin-bottom: 24px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n-title="meta.termsTitle">Terms of Service — Cformly</title>
+  <meta name="description" data-i18n-meta="meta.termsDesc" content="Cformly terms of service — acceptance, host obligations, data accuracy, limitation of liability, governing law." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="back"><a href="/">&larr; Back to Cformly</a></div>
-    <div class="header">
-        <h1>Terms of Service</h1>
-        <p class="updated">Last updated: July 2025</p>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Cformly home" data-i18n-aria-label="brand.aria">
+        <span class="brand-mark" aria-hidden="true">24H</span>
+        Cformly
+      </a>
+      <nav class="nav-links" aria-label="Primary" data-i18n-aria-label="nav.ariaPrimary">
+        <a href="index.html#how" data-i18n="nav.how">How it works</a>
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+        <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <button type="button" class="lang-toggle" data-i18n-toggle aria-pressed="false" hidden data-i18n-aria-label="lang.toggleAria">हिन्दी</button>
+      <a class="btn nav-cta" href="mailto:support@cformly.com?subject=Early%20access%20—%20Cformly" data-i18n="nav.cta">Get early access</a>
     </div>
+  </header>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading, installing, or using the Cformly mobile application ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+  <main class="legal-main">
+    <a class="back" href="index.html" data-i18n="back.toHome">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      Back to Cformly
+    </a>
+    <p class="updated" data-i18n="legal.updated">Last updated: July 2025</p>
+    <h1 data-i18n="terms.title">Terms of Service</h1>
+    <p class="lede" data-i18n="terms.lede">The agreement between you and Cformly for using the app, the extension, and this website.</p>
 
-    <h2>2. Description of Service</h2>
-    <p>Cformly is a filing assistant that helps hotels, guest houses, and individual hosts ("Hosts") prepare and file FRRO Form C (Foreigner Registration / Form III) as required under the Immigration and Foreigners Act, 2025 and related regulations.</p>
+    <h2 data-i18n="terms.acceptance">1. Acceptance of Terms</h2>
+    <p data-i18n="terms.acceptanceBody">By downloading, installing, or using the Cformly mobile application ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
 
-    <h2>3. Important Disclaimer</h2>
-    <p><strong>Cformly is NOT affiliated with, endorsed by, or connected to the FRRO (Foreigners Regional Registration Office), the Bureau of Immigration, or the Government of India.</strong></p>
-    <p>Cformly is an independent filing assistant. The Host remains solely and legally responsible for the accuracy of all information filed, timely submission within the prescribed timeframe, and compliance with all applicable laws.</p>
+    <h2 data-i18n="terms.description">2. Description of Service</h2>
+    <p data-i18n="terms.descriptionBody">Cformly is a filing assistant that helps hotels, guest houses, and individual hosts ("Hosts") prepare and file FRRO Form C (Foreigner Registration / Form III) as required under the Immigration and Foreigners Act, 2025 and related regulations.</p>
 
-    <h2>4. Host Obligations</h2>
+    <h2 data-i18n="terms.disclaimer">3. Important Disclaimer</h2>
+    <p data-i18n-html="terms.disclaimerBold"><strong>Cformly is NOT affiliated with, endorsed by, or connected to the FRRO (Foreigners Regional Registration Office), the Bureau of Immigration, or the Government of India.</strong></p>
+    <p data-i18n="terms.disclaimerBody">Cformly is an independent filing assistant. The Host remains solely and legally responsible for the accuracy of all information filed, timely submission within the prescribed timeframe, and compliance with all applicable laws.</p>
+
+    <h2 data-i18n="terms.obligations">4. Host Obligations</h2>
     <ul>
-        <li>Provide accurate property registration details</li>
-        <li>Verify all extracted data before submission (OCR may produce errors)</li>
-        <li>Ensure the guest has consented to collection of their data</li>
-        <li>File Form C within the legally mandated timeframe</li>
-        <li>Not use the App to file false, fraudulent, or misleading information</li>
+      <li data-i18n="terms.obligation1">Provide accurate property registration details</li>
+      <li data-i18n="terms.obligation2">Verify all extracted data before submission (OCR may produce errors)</li>
+      <li data-i18n="terms.obligation3">Ensure the guest has consented to collection of their data</li>
+      <li data-i18n="terms.obligation4">File Form C within the legally mandated timeframe</li>
+      <li data-i18n="terms.obligation5">Not use the App to file false, fraudulent, or misleading information</li>
     </ul>
 
-    <h2>5. Privacy and Data Handling</h2>
-    <p>Your use of the App is also governed by our <a href="/privacy">Privacy Policy</a>. All guest data is encrypted at rest using SQLCipher (AES-256). Data is stored on servers in India. No third-party AI services are used.</p>
+    <h2 data-i18n="terms.privacy">5. Privacy and Data Handling</h2>
+    <p data-i18n-html="terms.privacyBody">Your use of the App is also governed by our <a href="privacy.html">Privacy Policy</a>. All guest data is encrypted at rest using SQLCipher (AES-256). Data is stored on servers in India. No third-party AI services are used.</p>
 
-    <h2>6. Data Accuracy</h2>
-    <p>The App uses OCR to extract data from passports and visas. OCR is not 100% accurate. The Host must review all extracted data before submission.</p>
+    <h2 data-i18n="terms.accuracy">6. Data Accuracy</h2>
+    <p data-i18n="terms.accuracyBody">The App uses OCR to extract data from passports and visas. OCR is not 100% accurate. The Host must review all extracted data before submission.</p>
 
-    <h2>7. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law, Cformly is provided "AS IS" without warranties of any kind. We are not liable for penalties, fines, or legal consequences arising from late, inaccurate, or incomplete Form C filings.</p>
+    <h2 data-i18n="terms.liability">7. Limitation of Liability</h2>
+    <p data-i18n="terms.liabilityBody">To the maximum extent permitted by law, Cformly is provided "AS IS" without warranties of any kind. We are not liable for penalties, fines, or legal consequences arising from late, inaccurate, or incomplete Form C filings.</p>
 
-    <h2>8. Contact</h2>
+    <h2 data-i18n="terms.contactH">8. Contact</h2>
     <ul>
-        <li>Support: <a href="mailto:support@cformly.com">support@cformly.com</a></li>
-        <li>Privacy/Grievance: <a href="mailto:dpo@cformly.com">dpo@cformly.com</a></li>
-        <li>Security: <a href="mailto:security@cformly.com">security@cformly.com</a></li>
+      <li><span data-i18n="privacy.supportLabel">Support:</span> <a href="mailto:support@cformly.com">support@cformly.com</a></li>
+      <li><span data-i18n="terms.grievanceLabel">Privacy/Grievance:</span> <a href="mailto:dpo@cformly.com">dpo@cformly.com</a></li>
+      <li><span data-i18n="privacy.securityLabel">Security:</span> <a href="mailto:security@cformly.com">security@cformly.com</a></li>
     </ul>
 
-    <h2>9. Governing Law</h2>
-    <p>These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra, India.</p>
+    <h2 data-i18n="terms.governing">9. Governing Law</h2>
+    <p data-i18n="terms.governingBody">These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra, India.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <span data-i18n="footer.copyright">© 2025 Cformly. All rights reserved.</span>
+        <span data-i18n="footer.notAffiliated">Not affiliated with the FRRO or the Government of India.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
