@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Cformly">
+  <!--
+    Cformly brand mark — the open guest register.
+    Derived from the app icon: an open book/register with a center spine,
+    rendered in the app's sky-blue ramp on pale cyan. See app icon
+    (apps/mobile/assets/icon.png); this SVG matches its composition and palette.
+  -->
+  <rect width="64" height="64" rx="15" fill="#E3F1F7"/>
+  <!-- left page -->
+  <path d="M31 14 c-4 -2.4 -9 -2.8 -13.5 -1 C12.5 14.8 10 22 10 28
+           v16 c0 1.2 1.2 1.9 2.3 1.4 4.5 -1.9 9.5 -1.6 13.7 0.7
+           C28.3 46.9 30 44.4 30.2 41 L31 15 Z"
+        fill="#2E93E8"/>
+  <!-- right page -->
+  <path d="M33 14 c4 -2.4 9 -2.8 13.5 -1 C51.5 14.8 54 22 54 28
+           v16 c0 1.2 -1.2 1.9 -2.3 1.4 -4.5 -1.9 -9.5 -1.6 -13.7 0.7
+           C35.7 46.9 34 44.4 33.8 41 L33 15 Z"
+        fill="#1F7FCE"/>
+  <!-- center spine (open register gutter) -->
+  <rect x="30.2" y="14" width="3.6" height="31" rx="1.8" fill="#7AB8EA"/>
+  <!-- inner page lines (left) -->
+  <line x1="16" y1="22" x2="25" y2="20.4" stroke="#C8E4F6" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="16" y1="27" x2="26.5" y2="25.6" stroke="#C8E4F6" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="16" y1="32" x2="24" y2="31" stroke="#C8E4F6" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- inner page lines (right) -->
+  <line x1="48" y1="22" x2="39" y2="20.4" stroke="#D3E9F8" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="48" y1="27" x2="37.5" y2="25.6" stroke="#D3E9F8" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="48" y1="32" x2="40" y2="31" stroke="#D3E9F8" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

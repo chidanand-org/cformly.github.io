@@ -12,6 +12,8 @@
   <meta property="og:image" content="https://cformly.com/og-image.png" />
   <link rel="canonical" href="https://cformly.com/" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon-152.png" />
+  <meta name="theme-color" content="#162F57" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,7 +26,13 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="Cformly home" data-i18n-aria-label="brand.aria">
-        <span class="brand-mark" aria-hidden="true">24H</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none" focusable="false">
+            <path d="M31 14c-4-2.4-9-2.8-13.5-1C12.5 14.8 10 22 10 28v16c0 1.2 1.2 1.9 2.3 1.4 4.5-1.9 9.5-1.6 13.7.7C28.3 46.9 30 44.4 30.2 41L31 15Z" fill="currentColor"/>
+            <path d="M33 14c4-2.4 9-2.8 13.5-1C51.5 14.8 54 22 54 28v16c0 1.2-1.2 1.9-2.3 1.4-4.5-1.9-9.5-1.6-13.7.7C35.7 46.9 34 44.4 33.8 41L33 15Z" fill="currentColor" fill-opacity="0.72"/>
+            <rect x="30.2" y="14" width="3.6" height="31" rx="1.8" fill="#ffffff" fill-opacity="0.55"/>
+          </svg>
+        </span>
         Cformly
       </a>
       <nav class="nav-links" aria-label="Primary" data-i18n-aria-label="nav.ariaPrimary">
@@ -33,7 +41,7 @@
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
       <button type="button" class="lang-toggle" data-i18n-toggle aria-pressed="false" hidden data-i18n-aria-label="lang.toggleAria">हिन्दी</button>
-      <a class="btn nav-cta" href="mailto:support@cformly.com?subject=Early%20access%20—%20Cformly" data-i18n="nav.cta">Get early access</a>
+      <a class="btn nav-cta" href="mailto:support@cformly.com?subject=Start%20with%20Cformly" data-i18n="nav.cta">Start filling the easy way</a>
     </div>
   </header>
 
@@ -43,51 +51,84 @@
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <p class="eyebrow hero-eyebrow hero-anim hero-anim-1" data-i18n="hero.eyebrow">FRRO Form III · Foreign-guest registration</p>
-        <h1 class="display hero-anim hero-anim-2" data-i18n-html="hero.title">The front desk's <em>24-hour</em> register.</h1>
-        <p class="hero-lede hero-anim hero-anim-3" data-i18n="hero.lede">Cformly scans the guest's passport and visa, lays every field out for review, and fills the FRRO portal form from a handoff code. You solve the CAPTCHA and attach the photo — that stays human by law.</p>
+        <p class="eyebrow hero-eyebrow hero-anim hero-anim-1" data-i18n="hero.eyebrow">FRRO Form C · Filled from your phone</p>
+        <h1 class="display hero-anim hero-anim-2" data-i18n-html="hero.title">The fastest way to fill <em>FRRO Form C</em>.</h1>
+        <p class="hero-lede hero-anim hero-anim-3" data-i18n="hero.lede">Every foreign guest must be registered with the FRRO within 24 hours. Cformly scans the passport, checks every field, and fills the portal form for you — so the whole filing takes minutes, not a whole shift. You just confirm, solve the one-time CAPTCHA, and attach the photo.</p>
         <div class="hero-cta hero-anim hero-anim-4">
-          <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Early%20access%20—%20Cformly" data-i18n="nav.cta">Get early access</a>
-          <a class="btn btn-secondary" href="#how" data-i18n="hero.secondaryCta">See how it works</a>
+          <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Start%20with%20Cformly" data-i18n="hero.ctaPrimary">Start filling the easy way</a>
+          <a class="btn btn-secondary" href="#portal" data-i18n="hero.secondaryCta">Why not just use the portal?</a>
         </div>
         <div class="hero-facts hero-anim hero-anim-5">
           <div class="hero-fact">
-            <span class="value" data-i18n="hero.fact1Value">24 h</span>
-            <span class="label" data-i18n="hero.fact1Label">legal filing window</span>
+            <span class="value" data-i18n="hero.fact1Value">&lt; 10</span>
+            <span class="label" data-i18n="hero.fact1Label">minutes per guest</span>
           </div>
           <div class="hero-fact">
-            <span class="value">0</span>
-            <span class="label" data-i18n="hero.fact2Label">third-party AI services</span>
+            <span class="value" data-i18n="hero.fact2Value">0</span>
+            <span class="label" data-i18n="hero.fact2Label">manual passport typing</span>
           </div>
           <div class="hero-fact">
-            <span class="value">2</span>
-            <span class="label" data-i18n="hero.fact3Label">languages · EN + हिन्दी</span>
+            <span class="value" data-i18n="hero.fact3Value">EN + हिन्दी</span>
+            <span class="label" data-i18n="hero.fact3Label">every screen, both ways</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-visual hero-anim hero-anim-3" aria-hidden="true">
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="mock-status">
-              <span>9:41</span>
-              <span class="word">Cformly</span>
-              <span>●●●</span>
-            </div>
-            <div class="mock-body">
-              <span class="mock-eyebrow" data-i18n="mock.eyebrow">Review &amp; confirm</span>
-              <span class="mock-name">Anna Eriksson</span>
-              <span class="mock-meta" data-i18n="mock.meta">Arrival · check-in 4 Mar, 14:00</span>
-              <span class="seal seal-verified" data-i18n="mock.verified">Verified</span>
-              <span class="mock-mrz">P&lt;INDERIKSSON&lt;&lt;ANNA&lt;MARIA</span>
-              <div class="mock-field"><span class="k" data-i18n="mock.passport">Passport</span><span class="v">L898902C3</span></div>
-              <div class="mock-field"><span class="k" data-i18n="mock.visa">Visa</span><span class="v">IN3214567</span></div>
-              <div class="mock-bottom">
-                <span class="mock-btn" data-i18n="mock.send">Send to portal</span>
-              </div>
-            </div>
+      <div class="hero-visual hero-anim hero-anim-3">
+        <!-- Before / after: the conversion core — portal vs app -->
+        <div class="compare">
+          <div class="compare-col portal">
+            <span class="compare-tag" data-i18n="compare.portalTag">The hard way</span>
+            <ul class="compare-list">
+              <li data-i18n="compare.portal1">Type every passport &amp; visa field by hand</li>
+              <li data-i18n="compare.portal2">Hop between portal tabs, hunting for fields</li>
+              <li data-i18n="compare.portal3">Risk a typo the FRRO fine</li>
+              <li data-i18n="compare.portal4">Beat the 24-hour deadline on a night shift</li>
+            </ul>
           </div>
-          <span class="deadline-chip" data-i18n="mock.deadline">Due in 6 h 20 m</span>
+          <div class="compare-arrow" aria-hidden="true">→</div>
+          <div class="compare-col app">
+            <span class="compare-tag" data-i18n="compare.appTag">The Cformly way</span>
+            <ul class="compare-list">
+              <li data-i18n="compare.app1">Scan the passport — fields fill themselves</li>
+              <li data-i18n="compare.app2">Review every field on one screen</li>
+              <li data-i18n="compare.app3">Extension fills the portal form for you</li>
+              <li data-i18n="compare.app4">See the 24-hour countdown, never miss it</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why the app over the portal (core conversion objection) -->
+  <section class="section portal" id="portal">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow" data-i18n="why.eyebrow">The honest question</p>
+        <h2 data-i18n="why.title">Why not just fill Form C on the portal?</h2>
+        <p class="section-lede" data-i18n="why.lede">You legally can. The portal is just slow, fiddly, and unforgiving — and it punishes the mistakes you make on a busy night. Here's what Cformly takes off your plate.</p>
+      </div>
+      <div class="why-grid" data-reveal>
+        <div class="why-item">
+          <span class="why-num" aria-hidden="true">1</span>
+          <h3 data-i18n="why.item1Title">No more typing passport numbers</h3>
+          <p data-i18n="why.item1Body">A passport has 40+ characters of machine-readable data. Cformly reads it straight off the camera — every name, number, and date filled without a single keystroke, and without the transcription typos that trigger FRRO scrutiny.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num" aria-hidden="true">2</span>
+          <h3 data-i18n="why.item2Title">Every field on one screen</h3>
+          <p data-i18n="why.item2Body">The portal spreads the form across multiple tabs and pages. Cformly puts the whole record on a single review screen with confidence flags, so nothing is missed and nothing is guessed.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num" aria-hidden="true">3</span>
+          <h3 data-i18n="why.item3Title">The portal form fills itself</h3>
+          <p data-i18n="why.item3Body">No extension? You copy the fields once. With the free browser extension, Cformly auto-fills the FRRO portal form from a handoff code. You stay in control — you solve the CAPTCHA and attach the photo, as required.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-num" aria-hidden="true">4</span>
+          <h3 data-i18n="why.item4Title">The 24-hour deadline never sneaks up</h3>
+          <p data-i18n="why.item4Body">Cformly counts down from the moment you capture a guest. What used to live in the back of your head is now on screen — so the night shift never files late, never pays the fine.</p>
         </div>
       </div>
     </div>
@@ -97,9 +138,9 @@
   <section class="section" id="how">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="eyebrow" data-i18n="nav.how">How it works</p>
-        <h2 data-i18n="how.title">Three moves, one register.</h2>
-        <p class="section-lede" data-i18n="how.lede">From the guest at the counter to the filed form on the portal — the same three steps, every time.</p>
+        <p class="eyebrow" data-i18n="how.eyebrow">Your shift, simplified</p>
+        <h2 data-i18n="how.title">Check in a guest in three moves.</h2>
+        <p class="section-lede" data-i18n="how.lede">No typing, no hunting through portal tabs. From the counter to the filed form — the same three steps, every guest, every time.</p>
       </div>
       <div class="steps">
         <div class="step" data-reveal>
@@ -110,8 +151,8 @@
             <span class="step-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></svg>
             </span>
-            <h3 data-i18n="how.step1Title">Capture</h3>
-            <p data-i18n="how.step1Body">Point the phone camera at the passport and visa. Open-source OCR reads the machine-readable zone — no typing, no third-party AI.</p>
+            <h3 data-i18n="how.step1Title">1. Scan</h3>
+            <p data-i18n="how.step1Body">Point the camera at the passport and visa. OCR reads the fields instantly — no typing, no typos.</p>
           </div>
         </div>
         <div class="step" data-reveal data-delay="100">
@@ -120,8 +161,8 @@
             <span class="step-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
             </span>
-            <h3 data-i18n="how.step2Title">Review</h3>
-            <p data-i18n="how.step2Body">Every field lands on one screen with confidence flags. Fix what OCR flagged, add arrival and stay details, and snap the guest photo at the portal's 50&nbsp;KB limit.</p>
+            <h3 data-i18n="how.step2Title">2. Check</h3>
+            <p data-i18n="how.step2Body">Every field on one screen, with confidence flags on anything the OCR flagged. Fix it, add arrival and stay details, snap the guest photo.</p>
           </div>
         </div>
         <div class="step" data-reveal data-delay="200">
@@ -130,8 +171,8 @@
             <span class="step-icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
             </span>
-            <h3 data-i18n="how.step3Title">Send</h3>
-            <p data-i18n="how.step3Body">Open the FRRO portal in a browser and enter your handoff code — the Cformly extension fills the form. No extension handy? Copy the fields; the Tier&nbsp;1 clipboard path works on any machine.</p>
+            <h3 data-i18n="how.step3Title">3. File</h3>
+            <p data-i18n="how.step3Body">Open the portal in a browser, enter the handoff code, and the extension fills the form. You solve the CAPTCHA and attach the photo — done in minutes.</p>
           </div>
         </div>
       </div>
@@ -226,6 +267,10 @@
       </div>
       <div class="faq-list" data-reveal>
         <details class="faq-item">
+          <summary data-i18n="faq.q0">Why do I need the app if I can just fill the form on the FRRO website?</summary>
+          <div class="faq-body" data-i18n="faq.a0">You can — and the FRRO must accept both. The portal is just slow and unforgiving: dozens of fields to type, spread across tabs, under a hard 24-hour deadline. Cformly exists because the manual way wastes time and invites typos. The app scans the passport so you never type it, shows every field on one screen to review, and fills the portal form for you. You keep the legal responsibilities that are yours — solving the CAPTCHA and attaching the photo.</div>
+        </details>
+        <details class="faq-item">
           <summary data-i18n="faq.q1">Is Cformly a government app?</summary>
           <div class="faq-body" data-i18n="faq.a1">No. Cformly is an independent filing assistant. The host remains legally responsible for accurate and timely filing, and Cformly is not affiliated with or endorsed by the FRRO or the Government of India.</div>
         </details>
@@ -256,10 +301,10 @@
   <!-- CTA -->
   <section class="section cta-band">
     <div class="container">
-      <h2 data-reveal data-i18n="cta.title">Almost ready for the front desk.</h2>
-      <p class="section-lede" data-reveal data-i18n="cta.lede">Cformly will be on the App Store and Google Play. Leave your address and we'll write when it ships.</p>
+      <h2 data-reveal data-i18n="cta.title">Stop retyping passports. Start filing fast.</h2>
+      <p class="section-lede" data-reveal data-i18n="cta.lede">Ready for testers now, on the App Store and Google Play soon. Tell us where to send the first build and we'll set you up.</p>
       <div class="cta-actions" data-reveal>
-        <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Early%20access%20—%20Cformly" data-i18n="nav.cta">Get early access</a>
+        <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Start%20with%20Cformly" data-i18n="cta.primary">Start filling the easy way</a>
       </div>
       <div class="store-pills" data-reveal>
         <span class="store-pill"><span data-i18n="cta.appStore">App Store</span> <span class="soon" data-i18n="cta.comingSoon">coming soon</span></span>
@@ -283,7 +328,13 @@
       <div class="footer-grid">
         <div class="footer-col">
           <a class="brand" href="index.html">
-            <span class="brand-mark" aria-hidden="true">24H</span>
+            <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none" focusable="false">
+            <path d="M31 14c-4-2.4-9-2.8-13.5-1C12.5 14.8 10 22 10 28v16c0 1.2 1.2 1.9 2.3 1.4 4.5-1.9 9.5-1.6 13.7.7C28.3 46.9 30 44.4 30.2 41L31 15Z" fill="currentColor"/>
+            <path d="M33 14c4-2.4 9-2.8 13.5-1C51.5 14.8 54 22 54 28v16c0 1.2-1.2 1.9-2.3 1.4-4.5-1.9-9.5-1.6-13.7.7C35.7 46.9 34 44.4 33.8 41L33 15Z" fill="currentColor" fill-opacity="0.72"/>
+            <rect x="30.2" y="14" width="3.6" height="31" rx="1.8" fill="#ffffff" fill-opacity="0.55"/>
+          </svg>
+        </span>
             Cformly
           </a>
           <p class="footer-blurb" data-i18n="footer.blurb">The 24-hour register for hotel front desks in India. Scan, review, send — on-device and private.</p>
