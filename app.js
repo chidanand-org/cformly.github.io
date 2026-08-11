@@ -45,6 +45,7 @@
       'hero.fact2Label': 'manual passport typing',
       'hero.fact3Value': 'EN + हिन्दी',
       'hero.fact3Label': 'every screen, both ways',
+      'hero.ruleText': 'the 24-hour window Cformly counts for every guest',
 
       /* index — hero compare (before/after) */
       'compare.portalTag': 'The hard way',
@@ -75,20 +76,20 @@
       'how.eyebrow': 'Your shift, simplified',
       'how.title': 'Check in a guest in three moves.',
       'how.lede': 'No typing, no hunting through portal tabs. From the counter to the filed form — the same three steps, every guest, every time.',
-      'how.step1Title': '1. Scan',
+      'how.step1Title': 'Scan',
       'how.step1Body': 'Point the camera at the passport and visa. OCR reads the fields instantly — no typing, no typos.',
-      'how.step2Title': '2. Check',
+      'how.step2Title': 'Check',
       'how.step2Body': 'Every field on one screen, with confidence flags on anything the OCR flagged. Fix it, add arrival and stay details, snap the guest photo.',
-      'how.step3Title': '3. File',
+      'how.step3Title': 'File',
       'how.step3Body': 'Open the portal in a browser, enter the handoff code, and the extension fills the form. You solve the CAPTCHA and attach the photo — done in minutes.',
 
       /* index — privacy band */
       'privacy.title': 'Guest data stays on the property.',
-      'privacy.lede': 'Passports and visas are personal data. Cformly is built so that data never needs to leave the front desk — and when it does, it stays in India.',
-      'privacy.item1Title': 'Open-source OCR',
-      'privacy.item1Body': 'Passports and visas are read by open-source software on Cformly\'s own servers in India — no third-party AI services, and document photos are not stored.',
-      'privacy.item2Title': 'Encrypted at rest',
-      'privacy.item2Body': 'SQLCipher on the device, servers in India. Biometric or PIN lock, screen privacy, and clipboard hygiene are built in.',
+      'privacy.lede': 'Passports and visas are personal data. Cformly reads them on the phone — so that data never needs to leave the front desk, and never touches a server.',
+      'privacy.item1Title': 'Open-source OCR, on-device',
+      'privacy.item1Body': 'Passports and visas are read by open-source software on the phone itself — no third-party AI services, and no document photo is ever uploaded to any server.',
+      'privacy.item2Title': 'Encrypted on the phone',
+      'privacy.item2Body': 'SQLCipher on the device, the key in the hardware keystore. Biometric or PIN lock, screen privacy, and clipboard hygiene are built in.',
       'privacy.item3Title': 'Human in the loop',
       'privacy.item3Body': 'The CAPTCHA and the photo attachment stay with the host. Cformly fills the form; the host files it.',
       'privacy.item4Title': 'Your data, your say',
@@ -115,9 +116,9 @@
       'faq.q2': 'Who solves the CAPTCHA on the portal?',
       'faq.a2': 'The host, always. The extension fills the form fields; the human solves the CAPTCHA and attaches the photo before submitting.',
       'faq.q3': 'Where does guest data live?',
-      'faq.a3': 'Passports and visas are read on the device or on Cformly\'s own servers in India — no third-party AI services. Guest data is stored encrypted and can be exported or deleted from Settings at any time.',
+      'faq.a3': 'Passports and visas are read on the phone itself with open-source OCR — no third-party AI services, and no document photo is ever uploaded. Guest data is stored encrypted on the device and can be exported or deleted from Settings at any time.',
       'faq.q4': 'Does it work offline?',
-      'faq.a4': 'Capturing photos and reviewing records work offline. Extracting fields needs a connection to Cformly\'s servers; filling the portal needs a browser with the extension, or the Tier 1 clipboard path on any machine.',
+      'faq.a4': 'Scanning, extracting fields, reviewing records, and filling the portal all work fully on-device — no connection needed to read a passport or fill the form. Filing to the FRRO portal needs a browser (with or without the extension).',
       'faq.q5': 'What is the 24-hour rule?',
       'faq.a5': 'Foreign guests must be registered with the FRRO within 24 hours of check-in. Cformly shows a countdown from the moment a guest is captured, so the deadline never sneaks up on the night shift.',
       'faq.q6': 'Which languages does it support?',
@@ -143,27 +144,27 @@
       'privacy.lede': 'Compliant with the DPDP Act 2023. This notice explains what Cformly collects, where it is stored, and the rights you hold over it.',
       'privacy.collect': 'What We Collect',
       'privacy.collectIntro': 'Cformly collects the minimum data needed to file Form C / Form III (foreigner registration) on behalf of your guests:',
-      'privacy.collect1': '<strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Captured via camera OCR from the passport\'s MRZ line, processed <strong>on Cformly\'s own OCR servers in India (not stored)</strong>.',
-      'privacy.collect2': '<strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Captured via camera; the image is sent to our backend <strong>only</strong> for OCR extraction and deleted after the request completes (never stored beyond the request lifecycle).',
+      'privacy.collect1': '<strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Read from the passport\'s MRZ line by on-device open-source OCR — <strong>never uploaded to any server</strong>.',
+      'privacy.collect2': '<strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Read from the visa by the same on-device OCR — <strong>never uploaded</strong>.',
       'privacy.collect3': '<strong>Guest photo:</strong> captured and resized to portal limits, stored encrypted on-device.',
       'privacy.collect4': '<strong>Host/property profile:</strong> establishment name, address, FRRO office jurisdiction, contact details. Entered once, reused across filings.',
       'privacy.whereStored': 'Where Data Is Stored',
       'privacy.where1': '<strong>On-device encrypted SQLite database</strong> (key in iOS Keychain / Android Keystore, hardware-backed where available). Never in plaintext, never in cloud backups.',
-      'privacy.where2': '<strong>Backend (India region):</strong> host accounts, auth tokens. No raw passport/visa images are stored server-side beyond the request lifecycle.',
+      'privacy.where2': '<strong>Backend (India region):</strong> host accounts and auth tokens only. <strong>No document data, ever</strong> — no passport/visa images or extracted fields touch a server.',
       'privacy.howUsed': 'How We Use It',
       'privacy.use1': 'To pre-fill Form C / Form III fields for review and filing.',
-      'privacy.use2': 'To copy the filled fields and paste them into the portal manually (Tier 1 fallback).',
-      'privacy.use3': 'To auto-fill the FRRO portal via the browser extension (Tier 2).',
+      'privacy.use2': 'To copy the filled fields to the clipboard or a PDF for manual pasting into the portal.',
+      'privacy.use3': 'To auto-fill the FRRO portal form via the free browser extension (the host stays in the browser; no server relay).',
       'privacy.rights': 'Your Rights (DPDP Act 2023)',
       'privacy.right1': '<strong>Access:</strong> export all your data in machine-readable JSON (Settings &gt; Data &amp; Privacy &gt; Export Data).',
       'privacy.right2': '<strong>Correction:</strong> edit any guest field on the Review screen before filing.',
       'privacy.right3': '<strong>Erasure:</strong> Settings &gt; Delete Account removes all local PII, keys, and triggers server-side deletion. You receive a confirmation when complete.',
       'privacy.right4': '<strong>Grievance:</strong> contact <a href="mailto:dpo@cformly.com">dpo@cformly.com</a> for any privacy concern or data request.',
       'privacy.retention': 'Data Retention',
-      'privacy.retention1': 'Document photos are processed for OCR and are not stored on Cformly\'s servers. On your device, record photos stay encrypted until you delete them.',
+      'privacy.retention1': 'Document photos and extracted fields never leave the device — they stay encrypted there until you delete them.',
       'privacy.retention2': 'The encrypted local store persists until you delete the account or uninstall.',
       'privacy.crossBorder': 'Cross-Border Processing',
-      'privacy.crossBorderBody': 'The OCR backend runs in an India region (ap-south-1 / asia-south1). No third-party AI services are used — all OCR runs on self-hosted open-source infrastructure (RapidOCR). No data leaves India.',
+      'privacy.crossBorderBody': 'All document capture and OCR runs entirely on the phone. No passport, visa, or field data ever leaves the device or crosses a border. Only host accounts and auth tokens (non-PII) are held in an India region.',
       'privacy.consent': 'Consent',
       'privacy.consentBody': 'By using Cformly, you consent to this data processing. You can withdraw consent at any time by deleting your account. Withdrawal does not affect filings already submitted to the FRRO (those are governed by the FRRO\'s own policies).',
       'privacy.contactH': 'Contact',
@@ -190,7 +191,7 @@
       'terms.obligation4': 'File Form C within the legally mandated timeframe',
       'terms.obligation5': 'Not use the App to file false, fraudulent, or misleading information',
       'terms.privacy': '5. Privacy and Data Handling',
-      'terms.privacyBody': 'Your use of the App is also governed by our <a href="privacy.html">Privacy Policy</a>. All guest data is encrypted at rest using SQLCipher (AES-256). Data is stored on servers in India. No third-party AI services are used.',
+      'terms.privacyBody': 'Your use of the App is also governed by our <a href="privacy.html">Privacy Policy</a>. All guest data is encrypted at rest on the device using SQLCipher (AES-256); document capture and OCR run entirely on-device. The backend holds only host accounts (non-PII) in India. No third-party AI services are used.',
       'terms.accuracy': '6. Data Accuracy',
       'terms.accuracyBody': 'The App uses OCR to extract data from passports and visas. OCR is not 100% accurate. The Host must review all extracted data before submission.',
       'terms.liability': '7. Limitation of Liability',
@@ -236,6 +237,7 @@
       'hero.fact2Label': 'मैन्युअल पासपोर्ट टाइपिंग',
       'hero.fact3Value': 'EN + हिन्दी',
       'hero.fact3Label': 'हर स्क्रीन, दोनों तरह',
+      'hero.ruleText': 'हर अतिथि के लिए Cformly जो गिनता है, वह 24 घंटे की विंडो',
 
       /* index — hero compare (before/after) hi */
       'compare.portalTag': 'कठिन तरीका',
@@ -266,20 +268,20 @@
       'how.eyebrow': 'आपकी पाली, सरल',
       'how.title': 'तीन कदमों में अतिथि का चेक-इन।',
       'how.lede': 'ना टाइपिंग, ना पोर्टल के टैब में ढूँढना। काउंटर से लेकर दाखिल फ़ॉर्म तक — हर अतिथि के लिए हर बार वही तीन कदम।',
-      'how.step1Title': '1. स्कैन',
+      'how.step1Title': 'स्कैन',
       'how.step1Body': 'कैमरा पासपोर्ट और वीज़ा पर रखें। OCR फ़ील्ड तुरंत पढ़ लेता है — ना टाइपिंग, ना गलती।',
-      'how.step2Title': '2. जाँच',
+      'how.step2Title': 'जाँच',
       'how.step2Body': 'सभी फ़ील्ड एक स्क्रीन पर, और OCR ने जो चिह्नित किया उस पर कॉन्फिडेंस फ़्लैग। ठीक करें, आगमन और ठहराव का विवरण जोड़ें, अतिथि फ़ोटो लें।',
-      'how.step3Title': '3. दाखिल',
+      'how.step3Title': 'दाखिल',
       'how.step3Body': 'ब्राउज़र में पोर्टल खोलें, हैंडऑफ़ कोड डालें, और एक्सटेंशन फ़ॉर्म भर देता है। CAPTCHA हल करें, फ़ोटो लगाएँ — कुछ मिनटों में पूरा।',
 
       /* index — privacy band */
       'privacy.title': 'अतिथि का डेटा होटल में ही रहता है।',
-      'privacy.lede': 'पासपोर्ट और वीज़ा व्यक्तिगत डेटा हैं। Cformly इस तरह बनाया गया है कि डेटा को फ्रंट डेस्क से बाहर जाने की ज़रूरत ही न पड़े — और यदि जाए भी, तो भारत में ही रहे।',
-      'privacy.item1Title': 'ओपन-सोर्स OCR',
-      'privacy.item1Body': 'पासपोर्ट और वीज़ा भारत में Cformly के अपने सर्वरों पर ओपन-सोर्स सॉफ़्टवेयर से पढ़े जाते हैं — कोई थर्ड-पार्टी AI सेवा नहीं, और दस्तावेज़ फ़ोटो संग्रहीत नहीं होते।',
-      'privacy.item2Title': 'एन्क्रिप्टेड रखा गया',
-      'privacy.item2Body': 'डिवाइस पर SQLCipher, सर्वर भारत में। बायोमेट्रिक या PIN लॉक, स्क्रीन गोपनीयता और क्लिपबोर्ड स्वच्छता अंतर्निहित हैं।',
+      'privacy.lede': 'पासपोर्ट और वीज़ा व्यक्तिगत डेटा हैं। Cformly इन्हें फ़ोन पर ही पढ़ता है — ताकि डेटा को फ्रंट डेस्क से बाहर जाने की ज़रूरत ही न पड़े, और कभी किसी सर्वर तक न पहुँचे।',
+      'privacy.item1Title': 'ऑन-डिवाइस ओपन-सोर्स OCR',
+      'privacy.item1Body': 'पासपोर्ट और वीज़ा फ़ोन पर ही ओपन-सोर्स सॉफ़्टवेयर से पढ़े जाते हैं — कोई थर्ड-पार्टी AI सेवा नहीं, और कोई दस्तावेज़ फ़ोटो कभी किसी सर्वर पर अपलोड नहीं होती।',
+      'privacy.item2Title': 'फ़ोन पर एन्क्रिप्टेड',
+      'privacy.item2Body': 'डिवाइस पर SQLCipher, कुंजी हार्डवेयर कीस्टोर में। बायोमेट्रिक या PIN लॉक, स्क्रीन गोपनीयता और क्लिपबोर्ड स्वच्छता अंतर्निहित हैं।',
       'privacy.item3Title': 'मानव ही निर्णायक',
       'privacy.item3Body': 'CAPTCHA और फ़ोटो संलग्न करना होस्ट के पास ही रहता है। Cformly फ़ॉर्म भरता है; दाखिल करना होस्ट करता है।',
       'privacy.item4Title': 'आपका डेटा, आपका अधिकार',
@@ -306,9 +308,9 @@
       'faq.q2': 'पोर्टल पर CAPTCHA कौन हल करता है?',
       'faq.a2': 'हमेशा होस्ट। एक्सटेंशन फ़ॉर्म के फ़ील्ड भरता है; इंसान CAPTCHA हल करता है और जमा करने से पहले फ़ोटो लगाता है।',
       'faq.q3': 'अतिथि का डेटा कहाँ रहता है?',
-      'faq.a3': 'पासपोर्ट और वीज़ा डिवाइस पर या भारत में Cformly के अपने सर्वर पर पढ़े जाते हैं — कोई थर्ड-पार्टी AI सेवा नहीं। अतिथि डेटा एन्क्रिप्टेड रखा जाता है और सेटिंग्स से कभी भी निर्यात या हटाया जा सकता है।',
+      'faq.a3': 'पासपोर्ट और वीज़ा फ़ोन पर ही ओपन-सोर्स OCR से पढ़े जाते हैं — कोई थर्ड-पार्टी AI सेवा नहीं, और कोई दस्तावेज़ फ़ोटो अपलोड नहीं होती। अतिथि डेटा डिवाइस पर एन्क्रिप्टेड रखा जाता है और सेटिंग्स से कभी भी निर्यात या हटाया जा सकता है।',
       'faq.q4': 'क्या यह ऑफ़लाइन काम करता है?',
-      'faq.a4': 'फ़ोटो खींचना और रिकॉर्ड की समीक्षा ऑफ़लाइन काम करती है। फ़ील्ड निकालने के लिए Cformly के सर्वर से कनेक्शन चाहिए; पोर्टल भरने के लिए एक्सटेंशन वाला ब्राउज़र चाहिए, या किसी भी मशीन पर Tier 1 क्लिपबोर्ड तरीका।',
+      'faq.a4': 'स्कैन करना, फ़ील्ड निकालना, रिकॉर्ड की समीक्षा और पोर्टल भरना — सब कुछ पूरी तरह डिवाइस पर चलता है; पासपोर्ट पढ़ने या फ़ॉर्म भरने के लिए कनेक्शन ज़रूरी नहीं। FRRO पोर्टल पर दाखिल करने के लिए ब्राउज़र चाहिए (एक्सटेंशन के साथ या बिना)।',
       'faq.q5': '24 घंटे का नियम क्या है?',
       'faq.a5': 'विदेशी अतिथियों का पंजीकरण चेक-इन के 24 घंटे के भीतर FRRO में कराना अनिवार्य है। अतिथि स्कैन होते ही Cformly उलटी गिनती दिखाता है, ताकि रात की पाली में भी समय सीमा हाथ से न निकले।',
       'faq.q6': 'यह कौन-सी भाषाओं का समर्थन करता है?',
@@ -334,27 +336,27 @@
       'privacy.lede': 'DPDP अधिनियम 2023 के अनुरूप। यह सूचना बताती है कि Cformly क्या एकत्र करता है, वह कहाँ रखा जाता है, और उस पर आपके क्या अधिकार हैं।',
       'privacy.collect': 'हम क्या एकत्र करते हैं',
       'privacy.collectIntro': 'Cformly आपके अतिथियों की ओर से फ़ॉर्म C / फ़ॉर्म III (विदेशी पंजीकरण) दाखिल करने के लिए आवश्यक न्यूनतम डेटा एकत्र करता है:',
-      'privacy.collect1': '<strong>अतिथि पासपोर्ट डेटा:</strong> पूरा नाम, उपनाम, दिए गए नाम, लिंग, जन्म तिथि, राष्ट्रीयता, पासपोर्ट नंबर, जारी करने का स्थान/तिथि, समाप्ति। पासपोर्ट की MRZ पंक्ति से कैमरा OCR द्वारा कैप्चर किया जाता है, <strong>Cformly के अपने OCR सर्वरों पर (संग्रहीत नहीं)</strong> संसाधित होता है।',
-      'privacy.collect2': '<strong>अतिथि वीज़ा डेटा:</strong> वीज़ा नंबर, प्रकार, जारी करने का स्थान/तिथि, समाप्ति। कैमरे से कैप्चर होता है; छवि <strong>केवल</strong> OCR निष्कर्षण के लिए हमारे बैकएंड को भेजी जाती है और अनुरोध पूरा होने के बाद हटा दी जाती है (अनुरोध की अवधि से अधिक कभी संग्रहीत नहीं होती)।',
+      'privacy.collect1': '<strong>अतिथि पासपोर्ट डेटा:</strong> पूरा नाम, उपनाम, दिए गए नाम, लिंग, जन्म तिथि, राष्ट्रीयता, पासपोर्ट नंबर, जारी करने का स्थान/तिथि, समाप्ति। पासपोर्ट की MRZ पंक्ति से डिवाइस पर ही ओपन-सोर्स OCR द्वारा पढ़ा जाता है — <strong>किसी भी सर्वर पर कभी अपलोड नहीं होता</strong>।',
+      'privacy.collect2': '<strong>अतिथि वीज़ा डेटा:</strong> वीज़ा नंबर, प्रकार, जारी करने का स्थान/तिथि, समाप्ति। उसी डिवाइस-आधारित OCR से पढ़ा जाता है — <strong>कभी अपलोड नहीं होता</strong>।',
       'privacy.collect3': '<strong>अतिथि फ़ोटो:</strong> कैप्चर कर पोर्टल की सीमा तक छोटी की जाती है, डिवाइस पर एन्क्रिप्टेड रखी जाती है।',
       'privacy.collect4': '<strong>होस्ट/प्रॉपर्टी प्रोफ़ाइल:</strong> प्रतिष्ठान का नाम, पता, FRRO कार्यालय का क्षेत्राधिकार, संपर्क विवरण। एक बार दर्ज करें, हर दाखिले में फिर उपयोग होता है।',
       'privacy.whereStored': 'डेटा कहाँ रखा जाता है',
       'privacy.where1': '<strong>डिवाइस पर एन्क्रिप्टेड SQLite डेटाबेस</strong> (कुंजी iOS Keychain / Android Keystore में, जहाँ उपलब्ध हो हार्डवेयर-समर्थित)। कभी सादे पाठ में नहीं, कभी क्लाउड बैकअप में नहीं।',
-      'privacy.where2': '<strong>बैकएंड (भारत क्षेत्र):</strong> होस्ट खाते, प्रमाणीकरण टोकन। अनुरोध की अवधि से परे सर्वर पर कोई कच्ची पासपोर्ट/वीज़ा छवि संग्रहीत नहीं होती।',
+      'privacy.where2': '<strong>बैकएंड (भारत क्षेत्र):</strong> केवल होस्ट खाते और प्रमाणीकरण टोकन। <strong>कोई दस्तावेज़ डेटा कभी नहीं</strong> — कोई पासपोर्ट/वीज़ा छवि या निकाला गया फ़ील्ड सर्वर तक नहीं पहुँचता।',
       'privacy.howUsed': 'हम इसका उपयोग कैसे करते हैं',
       'privacy.use1': 'समीक्षा और दाखिल करने के लिए फ़ॉर्म C / फ़ॉर्म III के फ़ील्ड पहले से भरने हेतु।',
-      'privacy.use2': 'भरे गए फ़ील्ड कॉपी करके पोर्टल में मैन्युअल रूप से पेस्ट करने हेतु (Tier 1 विकल्प)।',
-      'privacy.use3': 'ब्राउज़र एक्सटेंशन के माध्यम से FRRO पोर्टल को स्वतः भरने हेतु (टियर 2)।',
+      'privacy.use2': 'भरे गए फ़ील्ड को पोर्टल में मैन्युअल रूप से चिपकाने के लिए क्लिपबोर्ड या PDF पर कॉपी करना।',
+      'privacy.use3': 'मुफ़्त ब्राउज़र एक्सटेंशन के माध्यम से FRRO पोर्टल फ़ॉर्म अपने आप भरना (होस्ट ब्राउज़र में ही रहता है; कोई सर्वर रिले नहीं)।',
       'privacy.rights': 'आपके अधिकार (DPDP अधिनियम 2023)',
       'privacy.right1': '<strong>पहुंच:</strong> अपना सारा डेटा मशीन-पठनीय JSON में निर्यात करें (Settings &gt; Data &amp; Privacy &gt; Export Data)।',
       'privacy.right2': '<strong>सुधार:</strong> दाखिल करने से पहले समीक्षा स्क्रीन पर कोई भी अतिथि फ़ील्ड संपादित करें।',
       'privacy.right3': '<strong>मिटाना:</strong> Settings &gt; Delete Account सभी स्थानीय व्यक्तिगत डेटा और कुंजियाँ हटाकर सर्वर-पक्षीय विलोपन शुरू करता है। पूरा होने पर आपको पुष्टि मिलती है।',
       'privacy.right4': '<strong>शिकायत:</strong> किसी भी गोपनीयता संबंधी चिंता या डेटा अनुरोध के लिए <a href="mailto:dpo@cformly.com">dpo@cformly.com</a> से संपर्क करें।',
       'privacy.retention': 'डेटा प्रतिधारण',
-      'privacy.retention1': 'दस्तावेज़ फ़ोटो केवल OCR के लिए संसाधित होते हैं और Cformly के सर्वर पर संग्रहीत नहीं होते। आपके डिवाइस पर रिकॉर्ड फ़ोटो तब तक एन्क्रिप्टेड रहते हैं जब तक आप उन्हें हटाते नहीं।',
+      'privacy.retention1': 'दस्तावेज़ फ़ोटो और निकाले गए फ़ील्ड कभी डिवाइस से बाहर नहीं जाते — जब तक आप हटाते नहीं, तब तक वे डिवाइस पर ही एन्क्रिप्टेड रहते हैं।',
       'privacy.retention2': 'एन्क्रिप्टेड स्थानीय भंडार तब तक बना रहता है जब तक आप खाता नहीं हटाते या ऐप अनइंस्टॉल नहीं करते।',
       'privacy.crossBorder': 'सीमा-पार प्रसंस्करण',
-      'privacy.crossBorderBody': 'OCR बैकएंड भारत क्षेत्र (ap-south-1 / asia-south1) में चलता है। कोई थर्ड-पार्टी AI सेवा उपयोग नहीं होती — सारा OCR स्व-होस्टेड ओपन-सोर्स इन्फ्रास्ट्रक्चर (RapidOCR) पर चलता है। कोई डेटा भारत से बाहर नहीं जाता।',
+      'privacy.crossBorderBody': 'सारा दस्तावेज़ कैप्चर और OCR पूरी तरह फ़ोन पर चलता है। कोई पासपोर्ट, वीज़ा या फ़ील्ड डेटा कभी डिवाइस से बाहर नहीं जाता या सीमा पार नहीं करता। केवल होस्ट खाते और प्रमाणीकरण टोकन (गैर-PII) भारत क्षेत्र में रखे जाते हैं।',
       'privacy.consent': 'सहमति',
       'privacy.consentBody': 'Cformly का उपयोग करके आप इस डेटा प्रसंस्करण के लिए सहमति देते हैं। आप किसी भी समय अपना खाता हटाकर सहमति वापस ले सकते हैं। सहमति वापस लेने से FRRO में पहले ही जमा किए गए दाखिलों पर कोई प्रभाव नहीं पड़ता (वे FRRO की अपनी नीतियों द्वारा नियंत्रित होते हैं)।',
       'privacy.contactH': 'संपर्क',
@@ -381,7 +383,7 @@
       'terms.obligation4': 'कानूनी रूप से निर्धारित समय सीमा के भीतर फ़ॉर्म C दाखिल करें',
       'terms.obligation5': 'झूठी, धोखाधड़ी वाली या भ्रामक जानकारी दाखिल करने के लिए ऐप का उपयोग न करें',
       'terms.privacy': '5. गोपनीयता और डेटा प्रबंधन',
-      'terms.privacyBody': 'ऐप के आपके उपयोग पर हमारी <a href="privacy.html">गोपनीयता नीति</a> भी लागू होती है। सारा अतिथि डेटा SQLCipher (AES-256) से एन्क्रिप्टेड रखा जाता है। डेटा भारत के सर्वरों पर संग्रहीत होता है। कोई थर्ड-पार्टी AI सेवा उपयोग नहीं होती।',
+      'terms.privacyBody': 'ऐप के आपके उपयोग पर हमारी <a href="privacy.html">गोपनीयता नीति</a> भी लागू होती है। सारा अतिथि डेटा SQLCipher (AES-256) से डिवाइस पर एन्क्रिप्टेड रखा जाता है; दस्तावेज़ कैप्चर और OCR पूरी तरह डिवाइस पर चलता है। बैकएंड में केवल होस्ट खाते (गैर-PII) भारत में रखे जाते हैं। कोई थर्ड-पार्टी AI सेवा उपयोग नहीं होती।',
       'terms.accuracy': '6. डेटा सटीकता',
       'terms.accuracyBody': 'ऐप पासपोर्ट और वीज़ा से डेटा निकालने के लिए OCR का उपयोग करता है। OCR 100% सटीक नहीं है। होस्ट को जमा करने से पहले सभी निकाले गए डेटा की समीक्षा करनी चाहिए।',
       'terms.liability': '7. दायित्व की सीमा',
@@ -510,6 +512,29 @@
       });
     });
   }
+
+  /* ---------- hero deadline clock ----------
+     Illustrative countdown of the 24-hour window (the feature the app shows
+     per guest). Seeds near 24h and ticks down; loops so it never reads 00:00:00
+     on a marketing page. Respects reduced-motion (renders once, no ticking). */
+  (function () {
+    var el = document.getElementById('deadline-clock');
+    if (!el) return;
+    var remaining = 23 * 3600 + 58 * 60 + 42; // ~84s into the window
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+    function render() {
+      var h = Math.floor(remaining / 3600);
+      var m = Math.floor((remaining % 3600) / 60);
+      var s = remaining % 60;
+      el.innerHTML = pad(h) + '<span class="colon">:</span>' + pad(m) + '<span class="colon">:</span>' + pad(s);
+    }
+    render();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    window.setInterval(function () {
+      remaining = remaining > 1 ? remaining - 1 : 24 * 3600 - 1;
+      render();
+    }, 1000);
+  })();
 
   /* ---------- init ---------- */
   applyI18n(currentLang());

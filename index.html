@@ -13,20 +13,20 @@
   <link rel="canonical" href="https://cformly.com/" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon-152.png" />
-  <meta name="theme-color" content="#162F57" />
+  <meta name="theme-color" content="#14263F" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Nav: passport-navy instrument band -->
+  <!-- Nav: a slim passport-navy instrument band -->
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="Cformly home" data-i18n-aria-label="brand.aria">
-        <img src="assets/logo.png" class="brand-mark" alt="" aria-hidden="true" width="32" height="32" />
+        <img src="assets/logo.png" class="brand-mark" alt="" aria-hidden="true" width="30" height="30" />
         Cformly
       </a>
       <nav class="nav-links" aria-label="Primary" data-i18n-aria-label="nav.ariaPrimary">
@@ -44,7 +44,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
-      <div>
+      <div class="hero-copy">
         <p class="eyebrow hero-eyebrow hero-anim hero-anim-1" data-i18n="hero.eyebrow">FRRO Form C · Filled from your phone</p>
         <h1 class="display hero-anim hero-anim-2" data-i18n-html="hero.title">The fastest way to fill <em>FRRO Form C</em>.</h1>
         <p class="hero-lede hero-anim hero-anim-3" data-i18n="hero.lede">Every foreign guest must be registered with the FRRO within 24 hours. Cformly scans the passport, checks every field, and fills the portal form for you — so the whole filing takes minutes, not a whole shift. You just confirm, solve the one-time CAPTCHA, and attach the photo.</p>
@@ -52,48 +52,64 @@
           <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Start%20with%20Cformly" data-i18n="hero.ctaPrimary">Start filling the easy way</a>
           <a class="btn btn-secondary" href="#portal" data-i18n="hero.secondaryCta">Why not just use the portal?</a>
         </div>
-        <div class="hero-facts hero-anim hero-anim-5">
-          <div class="hero-fact">
-            <span class="value" data-i18n="hero.fact1Value">&lt; 10</span>
-            <span class="label" data-i18n="hero.fact1Label">minutes per guest</span>
-          </div>
-          <div class="hero-fact">
-            <span class="value" data-i18n="hero.fact2Value">0</span>
-            <span class="label" data-i18n="hero.fact2Label">manual passport typing</span>
-          </div>
-          <div class="hero-fact">
-            <span class="value" data-i18n="hero.fact3Value">EN + हिन्दी</span>
-            <span class="label" data-i18n="hero.fact3Label">every screen, both ways</span>
-          </div>
+        <!-- The deadline rail: the emotional core, in the instrument voice.
+             Illustrative countdown of the 24-hour window (updated in app.js). -->
+        <div class="deadline-rail hero-anim hero-anim-5">
+          <span class="deadline-clock" aria-hidden="true" id="deadline-clock">
+            23<span class="colon">:</span>58<span class="colon">:</span>42
+          </span>
+          <span class="deadline-note" data-i18n="hero.ruleText">the 24-hour window Cformly counts for every guest</span>
         </div>
       </div>
 
-      <div class="hero-visual hero-anim hero-anim-3">
-        <!-- Before / after: the conversion core — portal vs app -->
-        <div class="compare">
-          <div class="compare-col portal">
-            <span class="compare-tag" data-i18n="compare.portalTag">The hard way</span>
-            <ul class="compare-list">
-              <li data-i18n="compare.portal1">Type every passport &amp; visa field by hand</li>
-              <li data-i18n="compare.portal2">Hop between portal tabs, hunting for fields</li>
-              <li data-i18n="compare.portal3">Risk a typo the FRRO fine</li>
-              <li data-i18n="compare.portal4">Beat the 24-hour deadline on a night shift</li>
-            </ul>
+      <!-- THE SIGNATURE: a passport data panel — scan a passport, the fields
+           fill themselves, the machine-readable zone resolves at the foot.
+           Decorative illustration of the product's core action (aria-hidden). -->
+      <div class="hero-visual hero-anim hero-anim-3" aria-hidden="true">
+        <div class="passport-panel">
+          <div class="pp-head">
+            <span class="pp-type">India · Passport</span>
+            <span class="pp-seal">P</span>
           </div>
-          <div class="compare-arrow" aria-hidden="true">→</div>
-          <div class="compare-col app">
-            <span class="compare-tag" data-i18n="compare.appTag">The Cformly way</span>
-            <ul class="compare-list">
-              <li data-i18n="compare.app1">Scan the passport — fields fill themselves</li>
-              <li data-i18n="compare.app2">Review every field on one screen</li>
-              <li data-i18n="compare.app3">Extension fills the portal form for you</li>
-              <li data-i18n="compare.app4">See the 24-hour countdown, never miss it</li>
-            </ul>
+          <div class="pp-body">
+            <div class="pp-row">
+              <div class="pp-portrait"></div>
+              <div class="pp-fields">
+                <div class="pp-field filled">
+                  <span class="pp-label">Surname</span>
+                  <span class="pp-value">SHARMA</span>
+                </div>
+                <div class="pp-field filled">
+                  <span class="pp-label">Given names</span>
+                  <span class="pp-value">KAVYA REDDY</span>
+                </div>
+                <div class="pp-fields-row" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                  <div class="pp-field filled">
+                    <span class="pp-label">Passport No</span>
+                    <span class="pp-value mono">A1234567</span>
+                  </div>
+                  <div class="pp-field filled">
+                    <span class="pp-label">Nationality</span>
+                    <span class="pp-value">INDIAN</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- the machine-readable zone — THE motif -->
+          <div class="mrz">
+            <span class="mrz-line">P&lt;INDSHARMA&lt;&lt;KAVYA&lt;REDDY&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+            <span class="mrz-line">A1234567&lt;9IND8501014F3001019&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;00</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- MRZ section rule -->
+  <div class="mrz-rule" aria-hidden="true">
+    <span class="mrz-rule-label"><span class="chev">&lt;&lt;&lt;</span> Form C · Form III <span class="chev">&lt;&lt;&lt;</span></span>
+  </div>
 
   <!-- Why the app over the portal (core conversion objection) -->
   <section class="section portal" id="portal">
@@ -105,22 +121,22 @@
       </div>
       <div class="why-grid" data-reveal>
         <div class="why-item">
-          <span class="why-num" aria-hidden="true">1</span>
+          <span class="why-num">01 / OCR</span>
           <h3 data-i18n="why.item1Title">No more typing passport numbers</h3>
           <p data-i18n="why.item1Body">A passport has 40+ characters of machine-readable data. Cformly reads it straight off the camera — every name, number, and date filled without a single keystroke, and without the transcription typos that trigger FRRO scrutiny.</p>
         </div>
         <div class="why-item">
-          <span class="why-num" aria-hidden="true">2</span>
+          <span class="why-num">02 / REVIEW</span>
           <h3 data-i18n="why.item2Title">Every field on one screen</h3>
           <p data-i18n="why.item2Body">The portal spreads the form across multiple tabs and pages. Cformly puts the whole record on a single review screen with confidence flags, so nothing is missed and nothing is guessed.</p>
         </div>
         <div class="why-item">
-          <span class="why-num" aria-hidden="true">3</span>
+          <span class="why-num">03 / FILL</span>
           <h3 data-i18n="why.item3Title">The portal form fills itself</h3>
           <p data-i18n="why.item3Body">No extension? You copy the fields once. With the free browser extension, Cformly auto-fills the FRRO portal form from a handoff code. You stay in control — you solve the CAPTCHA and attach the photo, as required.</p>
         </div>
         <div class="why-item">
-          <span class="why-num" aria-hidden="true">4</span>
+          <span class="why-num">04 / TIME</span>
           <h3 data-i18n="why.item4Title">The 24-hour deadline never sneaks up</h3>
           <p data-i18n="why.item4Body">Cformly counts down from the moment you capture a guest. What used to live in the back of your head is now on screen — so the night shift never files late, never pays the fine.</p>
         </div>
@@ -129,7 +145,7 @@
   </section>
 
   <!-- How it works -->
-  <section class="section" id="how">
+  <section class="section section-alt" id="how">
     <div class="container">
       <div class="section-head" data-reveal>
         <p class="eyebrow" data-i18n="how.eyebrow">Your shift, simplified</p>
@@ -138,36 +154,28 @@
       </div>
       <div class="steps">
         <div class="step" data-reveal>
-          <span class="step-num done" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+          <div class="step-meta"><span class="step-idx">01</span><span class="step-dash"></span><span>SCAN</span></div>
+          <span class="step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></svg>
           </span>
-          <div class="step-body">
-            <span class="step-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.5"/></svg>
-            </span>
-            <h3 data-i18n="how.step1Title">1. Scan</h3>
-            <p data-i18n="how.step1Body">Point the camera at the passport and visa. OCR reads the fields instantly — no typing, no typos.</p>
-          </div>
+          <h3 data-i18n="how.step1Title">Scan</h3>
+          <p data-i18n="how.step1Body">Point the camera at the passport and visa. OCR reads the fields instantly — no typing, no typos.</p>
         </div>
         <div class="step" data-reveal data-delay="100">
-          <span class="step-num current" aria-hidden="true">2</span>
-          <div class="step-body">
-            <span class="step-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-            </span>
-            <h3 data-i18n="how.step2Title">2. Check</h3>
-            <p data-i18n="how.step2Body">Every field on one screen, with confidence flags on anything the OCR flagged. Fix it, add arrival and stay details, snap the guest photo.</p>
-          </div>
+          <div class="step-meta"><span class="step-idx">02</span><span class="step-dash"></span><span>CHECK</span></div>
+          <span class="step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+          </span>
+          <h3 data-i18n="how.step2Title">Check</h3>
+          <p data-i18n="how.step2Body">Every field on one screen, with confidence flags on anything the OCR flagged. Fix it, add arrival and stay details, snap the guest photo.</p>
         </div>
         <div class="step" data-reveal data-delay="200">
-          <span class="step-num next" aria-hidden="true">3</span>
-          <div class="step-body">
-            <span class="step-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
-            </span>
-            <h3 data-i18n="how.step3Title">3. File</h3>
-            <p data-i18n="how.step3Body">Open the portal in a browser, enter the handoff code, and the extension fills the form. You solve the CAPTCHA and attach the photo — done in minutes.</p>
-          </div>
+          <div class="step-meta"><span class="step-idx">03</span><span class="step-dash"></span><span>FILE</span></div>
+          <span class="step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg>
+          </span>
+          <h3 data-i18n="how.step3Title">File</h3>
+          <p data-i18n="how.step3Body">Open the portal in a browser, enter the handoff code, and the extension fills the form. You solve the CAPTCHA and attach the photo — done in minutes.</p>
         </div>
       </div>
     </div>
@@ -179,7 +187,7 @@
       <div class="section-head" data-reveal>
         <p class="eyebrow" data-i18n="nav.privacy">Privacy</p>
         <h2 data-i18n="privacy.title">Guest data stays on the property.</h2>
-        <p class="section-lede" data-i18n="privacy.lede">Passports and visas are personal data. Cformly is built so that data never needs to leave the front desk — and when it does, it stays in India.</p>
+        <p class="section-lede" data-i18n="privacy.lede">Passports and visas are personal data. Cformly reads them on the phone — so that data never needs to leave the front desk, and never touches a server.</p>
       </div>
       <div class="privacy-grid">
         <div class="privacy-item" data-reveal>
@@ -187,8 +195,8 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
           </span>
           <div>
-            <h3 data-i18n="privacy.item1Title">Open-source OCR</h3>
-            <p data-i18n="privacy.item1Body">Passports and visas are read by open-source software on Cformly's own servers in India — no third-party AI services, and document photos are not stored.</p>
+            <h3 data-i18n="privacy.item1Title">Open-source OCR, on-device</h3>
+            <p data-i18n="privacy.item1Body">Passports and visas are read by open-source software on the phone itself — no third-party AI services, and no document photo is ever uploaded to any server.</p>
           </div>
         </div>
         <div class="privacy-item" data-reveal data-delay="100">
@@ -196,8 +204,8 @@
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
           </span>
           <div>
-            <h3 data-i18n="privacy.item2Title">Encrypted at rest</h3>
-            <p data-i18n="privacy.item2Body">SQLCipher on the device, servers in India. Biometric or PIN lock, screen privacy, and clipboard hygiene are built in.</p>
+            <h3 data-i18n="privacy.item2Title">Encrypted on the phone</h3>
+            <p data-i18n="privacy.item2Body">SQLCipher on the device, the key in the hardware keystore. Biometric or PIN lock, screen privacy, and clipboard hygiene are built in.</p>
           </div>
         </div>
         <div class="privacy-item" data-reveal data-delay="150">
@@ -253,7 +261,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section section-alt" id="faq">
     <div class="container">
       <div class="section-head" data-reveal>
         <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
@@ -274,11 +282,11 @@
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q3">Where does guest data live?</summary>
-          <div class="faq-body" data-i18n="faq.a3">Passports and visas are read on the device or on Cformly's own servers in India — no third-party AI services. Guest data is stored encrypted and can be exported or deleted from Settings at any time.</div>
+          <div class="faq-body" data-i18n="faq.a3">Passports and visas are read on the phone itself with open-source OCR — no third-party AI services, and no document photo is ever uploaded. Guest data is stored encrypted on the device and can be exported or deleted from Settings at any time.</div>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q4">Does it work offline?</summary>
-          <div class="faq-body" data-i18n="faq.a4">Capturing photos and reviewing records work offline. Extracting fields needs a connection to Cformly's servers; filling the portal needs a browser with the extension, or the Tier 1 clipboard path on any machine.</div>
+          <div class="faq-body" data-i18n="faq.a4">Scanning, extracting fields, reviewing records, and filling the portal all work fully on-device — no connection needed to read a passport or fill the form. Filing to the FRRO portal needs a browser (with or without the extension).</div>
         </details>
         <details class="faq-item">
           <summary data-i18n="faq.q5">What is the 24-hour rule?</summary>
@@ -296,7 +304,7 @@
   <section class="section cta-band">
     <div class="container">
       <h2 data-reveal data-i18n="cta.title">Stop retyping passports. Start filing fast.</h2>
-      <p class="section-lede" data-reveal data-i18n="cta.lede">Ready for testers now, on the App Store and Google Play soon. Tell us where to send the first build and we'll set you up.</p>
+      <p class="section-lede" data-reveal data-i18n="cta.lede">Cformly will be on the App Store and Google Play. Leave your address and we'll write when it ships.</p>
       <div class="cta-actions" data-reveal>
         <a class="btn btn-primary" href="mailto:support@cformly.com?subject=Start%20with%20Cformly" data-i18n="cta.primary">Start filling the easy way</a>
       </div>
@@ -322,27 +330,27 @@
       <div class="footer-grid">
         <div class="footer-col">
           <a class="brand" href="index.html">
-            <img src="assets/logo.png" class="brand-mark" alt="" aria-hidden="true" width="32" height="32" />
+            <img src="assets/logo.png" class="brand-mark" alt="" aria-hidden="true" width="30" height="30" />
             Cformly
           </a>
           <p class="footer-blurb" data-i18n="footer.blurb">The 24-hour register for hotel front desks in India. Scan, review, send — on-device and private.</p>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.product">Product</h3>
+          <h4 data-i18n="footer.product">Product</h4>
           <ul>
             <li><a href="#how" data-i18n="nav.how">How it works</a></li>
             <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.legal">Legal</h3>
+          <h4 data-i18n="footer.legal">Legal</h4>
           <ul>
             <li><a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a></li>
             <li><a href="terms.html" data-i18n="footer.terms">Terms of service</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3 data-i18n="footer.contact">Contact</h3>
+          <h4 data-i18n="footer.contact">Contact</h4>
           <ul>
             <li><a href="mailto:support@cformly.com">support@cformly.com</a></li>
             <li><a href="mailto:security@cformly.com">security@cformly.com</a></li>

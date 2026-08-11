@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#162F57" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -50,8 +50,8 @@
     <h2 data-i18n="privacy.collect">What We Collect</h2>
     <p data-i18n="privacy.collectIntro">Cformly collects the minimum data needed to file Form C / Form III (foreigner registration) on behalf of your guests:</p>
     <ul>
-      <li data-i18n-html="privacy.collect1"><strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Captured via camera OCR from the passport's MRZ line, processed <strong>on Cformly's own OCR servers in India (not stored)</strong>.</li>
-      <li data-i18n-html="privacy.collect2"><strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Captured via camera; the image is sent to our backend <strong>only</strong> for OCR extraction and deleted after the request completes (never stored beyond the request lifecycle).</li>
+      <li data-i18n-html="privacy.collect1"><strong>Guest passport data:</strong> full name, surname, given names, sex, date of birth, nationality, passport number, place/date of issue, expiry. Read from the passport's MRZ line by on-device open-source OCR — <strong>never uploaded to any server</strong>.</li>
+      <li data-i18n-html="privacy.collect2"><strong>Guest visa data:</strong> visa number, type, place/date of issue, expiry. Read from the visa by the same on-device OCR — <strong>never uploaded</strong>.</li>
       <li data-i18n-html="privacy.collect3"><strong>Guest photo:</strong> captured and resized to portal limits, stored encrypted on-device.</li>
       <li data-i18n-html="privacy.collect4"><strong>Host/property profile:</strong> establishment name, address, FRRO office jurisdiction, contact details. Entered once, reused across filings.</li>
     </ul>
@@ -59,14 +59,14 @@
     <h2 data-i18n="privacy.whereStored">Where Data Is Stored</h2>
     <ul>
       <li data-i18n-html="privacy.where1"><strong>On-device encrypted SQLite database</strong> (key in iOS Keychain / Android Keystore, hardware-backed where available). Never in plaintext, never in cloud backups.</li>
-      <li data-i18n-html="privacy.where2"><strong>Backend (India region):</strong> host accounts, auth tokens. No raw passport/visa images are stored server-side beyond the request lifecycle.</li>
+      <li data-i18n-html="privacy.where2"><strong>Backend (India region):</strong> host accounts and auth tokens only. <strong>No document data, ever</strong> — no passport/visa images or extracted fields touch a server.</li>
     </ul>
 
     <h2 data-i18n="privacy.howUsed">How We Use It</h2>
     <ul>
       <li data-i18n="privacy.use1">To pre-fill Form C / Form III fields for review and filing.</li>
-      <li data-i18n="privacy.use2">To copy the filled fields and paste them into the portal manually (Tier 1 fallback).</li>
-      <li data-i18n="privacy.use3">To auto-fill the FRRO portal via the browser extension (Tier 2).</li>
+      <li data-i18n="privacy.use2">To copy the filled fields to the clipboard or a PDF for manual pasting into the portal.</li>
+      <li data-i18n="privacy.use3">To auto-fill the FRRO portal form via the free browser extension (the host stays in the browser; no server relay).</li>
     </ul>
 
     <h2 data-i18n="privacy.rights">Your Rights (DPDP Act 2023)</h2>
@@ -79,12 +79,12 @@
 
     <h2 data-i18n="privacy.retention">Data Retention</h2>
     <ul>
-      <li data-i18n="privacy.retention1">Document photos are processed for OCR and are not stored on Cformly's servers. On your device, record photos stay encrypted until you delete them.</li>
+      <li data-i18n="privacy.retention1">Document photos and extracted fields never leave the device — they stay encrypted there until you delete them.</li>
       <li data-i18n="privacy.retention2">The encrypted local store persists until you delete the account or uninstall.</li>
     </ul>
 
     <h2 data-i18n="privacy.crossBorder">Cross-Border Processing</h2>
-    <p data-i18n="privacy.crossBorderBody">The OCR backend runs in an India region (ap-south-1 / asia-south1). No third-party AI services are used — all OCR runs on self-hosted open-source infrastructure (RapidOCR). No data leaves India.</p>
+    <p data-i18n="privacy.crossBorderBody">All document capture and OCR runs entirely on the phone. No passport, visa, or field data ever leaves the device or crosses a border. Only host accounts and auth tokens (non-PII) are held in an India region.</p>
 
     <h2 data-i18n="privacy.consent">Consent</h2>
     <p data-i18n="privacy.consentBody">By using Cformly, you consent to this data processing. You can withdraw consent at any time by deleting your account. Withdrawal does not affect filings already submitted to the FRRO (those are governed by the FRRO's own policies).</p>
