@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <title data-i18n-title="meta.compressTitle">
+      Free photo compressor for the FRRO portal — Cformly
+    </title>
+    <meta
+      name="description"
+      data-i18n-meta="meta.compressDesc"
+      content="Shrink a guest photo below the FRRO portal's 50 KB limit right in your browser. Free, works offline, and the photo never leaves your device."
+    />
+    <meta
+      property="og:title"
+      data-i18n-meta="meta.compressTitle"
+      content="Free photo compressor for the FRRO portal — Cformly"
+    />
+    <meta
+      property="og:description"
+      data-i18n-meta="meta.compressDesc"
+      content="Shrink a guest photo below the FRRO portal's 50 KB limit right in your browser. Free, works offline, and the photo never leaves your device."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cformly" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="hi_IN" />
+    <meta property="og:locale:alternate" content="kn_IN" />
+    <meta property="og:locale:alternate" content="ta_IN" />
+    <meta property="og:locale:alternate" content="te_IN" />
+    <meta property="og:locale:alternate" content="ml_IN" />
+    <meta property="og:locale:alternate" content="pa_IN" />
+    <meta property="og:locale:alternate" content="mr_IN" />
+    <meta property="og:locale:alternate" content="ur_IN" />
+    <meta property="og:locale:alternate" content="bn_IN" />
+    <meta property="og:locale:alternate" content="gu_IN" />
+    <meta property="og:locale:alternate" content="as_IN" />
+    <meta property="og:url" content="https://cformly.com/compress.html" />
+    <meta property="og:image" content="https://cformly.com/og-image.jpg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Free photo compressor for the FRRO portal — Cformly"
+    />
+    <meta
+      name="twitter:description"
+      content="Shrink a guest photo below the FRRO portal's 50 KB limit right in your browser. Free, works offline, and the photo never leaves your device."
+    />
+    <meta name="twitter:image" content="https://cformly.com/og-image.jpg" />
+    <link rel="canonical" href="https://cformly.com/compress.html" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon-152.png" />
+    <meta name="theme-color" content="#14263F" />
+<link rel="stylesheet" href="styles.css" />
+    <!-- Roadmap 99: the free-tool compressor. Page-scoped styles + script
+         (the trust.html pattern) — the tool is self-contained and needs no
+         server at all. The 50 KB figure is the portal's documented photo
+         ceiling (docs/product/IMPROVEMENT_ROADMAP_100.md "rejects photos
+         >50 KB"; apps/mobile/src/utils/image.ts "at most 50 KB"). -->
+    <style>
+      .compress-tool {
+        border: 1px solid #d8dee7;
+        border-radius: 18px;
+        background: var(--surface);
+        padding: 1.8rem 1.6rem;
+        margin: 1.5rem 0 2rem;
+      }
+      .compress-row {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+      }
+      .compress-row:last-child {
+        margin-bottom: 0;
+      }
+      .compress-row label {
+        font-size: 0.9rem;
+        color: #5b6472;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .compress-row input[type="number"] {
+        width: 6.5rem;
+        min-height: 40px;
+        padding: 0 12px;
+        border: 1px solid #c4ccd8;
+        border-radius: 8px;
+        font: inherit;
+      }
+      .visually-hidden-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .compress-privacy {
+        font-size: 0.9rem;
+        color: #1a7f4b;
+        font-weight: 600;
+        margin: 0 0 1rem;
+      }
+      .compress-error {
+        color: #b3261e;
+        font-weight: 600;
+      }
+      .compress-results {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 1.2rem;
+      }
+      .compress-result {
+        flex: 1 1 220px;
+        border: 1px solid #d8dee7;
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .compress-result h3 {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #5b6472;
+        margin: 0 0 0.6rem;
+      }
+      .compress-result img {
+        max-width: 100%;
+        max-height: 180px;
+        border-radius: 8px;
+        margin-bottom: 0.6rem;
+      }
+      .compress-result .size {
+        font-weight: 700;
+        color: var(--passport);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Cformly home"
+          data-i18n-aria-label="brand.aria"
+        >
+          <img
+            src="assets/logo.svg"
+            class="brand-mark"
+            alt=""
+            aria-hidden="true"
+            width="30"
+            height="30"
+          />
+          Cformly
+        </a>
+        <nav
+          id="nav-links"
+          class="nav-links"
+          aria-label="Primary"
+          data-i18n-aria-label="nav.ariaPrimary"
+        >
+          <a href="index.html#how" data-i18n="nav.how">How it works</a>
+          <a href="setup.html" data-i18n="nav.setup">Setup guide</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+        <button
+          type="button"
+          class="lang-toggle"
+          data-i18n-toggle
+          aria-pressed="false"
+          hidden
+          data-i18n-aria-label="lang.toggleAria"
+        >
+          हिन्दी
+        </button>
+        <noscript><p class="noscript-lang-note" style="font-size:0.85rem;color:#6b7280">Language switch requires JavaScript — this site is in English without it.</p></noscript>
+        <a
+          class="btn nav-cta"
+          href="index.html#get-started"
+          data-i18n="nav.cta"
+          >Get early access</a
+        >
+      </div>
+    </header>
+
+    <main id="main" class="legal-main" tabindex="-1">
+      <a class="back" href="index.html">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        <span data-i18n="back.toHome">Back to Cformly</span>
+      </a>
+      <h1 data-i18n="compress.title">Compress a photo for the FRRO portal</h1>
+      <p class="lede" data-i18n="compress.lede">
+        The portal rejects guest photos over 50 KB. This free tool shrinks any
+        photo below the limit in your browser — the file never leaves your
+        device.
+      </p>
+
+      <h2 data-i18n="compress.howTitle">How it works</h2>
+      <ol class="setup-walk">
+        <li data-i18n="compress.step1">
+          Choose the guest photo from your phone or computer.
+        </li>
+        <li data-i18n="compress.step2">
+          The tool resizes it and re-encodes it below your target size —
+          entirely on this page, offline.
+        </li>
+        <li data-i18n="compress.step3">
+          Download the compressed JPEG and attach it on the portal.
+        </li>
+      </ol>
+
+      <section class="compress-tool" aria-label="Photo compressor">
+        <p class="compress-privacy" data-i18n="compress.offline">
+          No upload, ever: this page has no server and no tracking. The photo
+          is processed by your own browser and stays on your device.
+        </p>
+        <div class="compress-row">
+          <label>
+            <span class="btn btn-secondary" data-i18n="compress.choose"
+              >Choose photo</span
+            >
+            <input
+              id="compress-file"
+              type="file"
+              accept="image/*"
+              class="visually-hidden-input"
+            />
+          </label>
+          <label>
+            <span data-i18n="compress.targetLabel">Target size (KB)</span>
+            <input
+              id="compress-target"
+              type="number"
+              min="10"
+              max="500"
+              value="50"
+              inputmode="numeric"
+            />
+          </label>
+          <button
+            type="button"
+            id="compress-run"
+            class="btn btn-primary"
+            data-i18n="compress.compressBtn"
+          >
+            Compress
+          </button>
+        </div>
+        <p
+          id="compress-error-nofile"
+          class="compress-error"
+          data-i18n="compress.errorNoFile"
+          hidden
+        >
+          Choose a photo first.
+        </p>
+        <p
+          id="compress-error-badfile"
+          class="compress-error"
+          data-i18n="compress.errorBadFile"
+          hidden
+        >
+          Couldn't read that file — please use a JPG or PNG photo.
+        </p>
+        <div class="compress-results" id="compress-results" hidden>
+          <div class="compress-result">
+            <h3 data-i18n="compress.before">Original</h3>
+            <img id="compress-before-img" alt="" />
+            <p>
+              <span class="size" id="compress-before-size"></span
+              ><span id="compress-before-dims"></span>
+            </p>
+          </div>
+          <div class="compress-result">
+            <h3 data-i18n="compress.after">Compressed</h3>
+            <img id="compress-after-img" alt="" />
+            <p>
+              <span class="size" id="compress-after-size"></span
+              ><span id="compress-after-dims"></span>
+            </p>
+          </div>
+        </div>
+        <div class="compress-row" id="compress-download-row" hidden>
+          <a
+            id="compress-download"
+            class="btn btn-primary"
+            download="guest-photo.jpg"
+            href="#"
+            data-i18n="compress.download"
+            >Download JPEG</a
+          >
+          <button
+            type="button"
+            id="compress-reset"
+            class="btn btn-secondary"
+            data-i18n="compress.again"
+          >
+            Compress another photo
+          </button>
+        </div>
+      </section>
+
+      <p class="setup-note">
+        <a href="form-c.html" data-i18n="footer.formc">Form III guide</a>
+        ·
+        <a href="setup.html" data-i18n="nav.setup">Setup guide</a>
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span data-i18n="footer.copyright"
+            >© 2026 Cformly. All rights reserved.</span
+          >
+          <span data-i18n="footer.notAffiliated"
+            >Not affiliated with the FRRO or the Government of India.</span
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- The compressor: pure browser-side canvas work. No network calls of
+         any kind — fetch/XHR/sendBeacon are never used on this page. Error
+         copy lives on the elements above so the i18n engine translates it. -->
+    <script>
+      (function () {
+        "use strict";
+        var fileInput = document.getElementById("compress-file");
+        var targetInput = document.getElementById("compress-target");
+        var runBtn = document.getElementById("compress-run");
+        var errNoFile = document.getElementById("compress-error-nofile");
+        var errBadFile = document.getElementById("compress-error-badfile");
+        var resultsEl = document.getElementById("compress-results");
+        var downloadRow = document.getElementById("compress-download-row");
+        var downloadEl = document.getElementById("compress-download");
+        var resetBtn = document.getElementById("compress-reset");
+        var beforeImg = document.getElementById("compress-before-img");
+        var afterImg = document.getElementById("compress-after-img");
+        var beforeSize = document.getElementById("compress-before-size");
+        var afterSize = document.getElementById("compress-after-size");
+        var beforeDims = document.getElementById("compress-before-dims");
+        var afterDims = document.getElementById("compress-after-dims");
+        var bitmap = null;
+        var fileUrl = null;
+        var outUrl = null;
+
+        function fmt(bytes) {
+          return bytes >= 1024 ? (bytes / 1024).toFixed(1) + " KB" : bytes + " B";
+        }
+        function show(el) {
+          el.removeAttribute("hidden");
+        }
+        function hide(el) {
+          el.setAttribute("hidden", "");
+        }
+        function clearErrors() {
+          hide(errNoFile);
+          hide(errBadFile);
+        }
+        function toImage(file) {
+          clearErrors();
+          if (!file) {
+            show(errNoFile);
+            return;
+          }
+          if (!/^image\//.test(file.type)) {
+            show(errBadFile);
+            return;
+          }
+          if (fileUrl) window.URL.revokeObjectURL(fileUrl);
+          fileUrl = window.URL.createObjectURL(file);
+          var img = new Image();
+          img.onload = function () {
+            bitmap = img;
+            beforeImg.src = fileUrl;
+            beforeSize.textContent = fmt(file.size);
+            beforeDims.textContent = " · " + img.naturalWidth + "×" + img.naturalHeight;
+          };
+          img.onerror = function () {
+            bitmap = null;
+            show(errBadFile);
+          };
+          img.src = fileUrl;
+        }
+        function encode(canvas, quality) {
+          return new Promise(function (resolve) {
+            canvas.toBlob(resolve, "image/jpeg", quality);
+          });
+        }
+        function compress() {
+          clearErrors();
+          if (!bitmap) {
+            show(errNoFile);
+            return;
+          }
+          var targetKb = parseInt(targetInput.value, 10);
+          if (!(targetKb >= 10)) targetKb = 50;
+          var target = targetKb * 1024;
+          runBtn.setAttribute("disabled", "");
+          var width = bitmap.naturalWidth;
+          var height = bitmap.naturalHeight;
+          var canvas = document.createElement("canvas");
+          function attempt() {
+            canvas.width = width;
+            canvas.height = height;
+            canvas.getContext("2d").drawImage(bitmap, 0, 0, width, height);
+            var quality = 0.9;
+            function step() {
+              encode(canvas, quality).then(function (blob) {
+                if (blob && blob.size <= target) {
+                  finish(blob);
+                } else if (quality > 0.3) {
+                  quality -= 0.1;
+                  step();
+                } else {
+                  // Floor quality reached — shrink dimensions and restart.
+                  width = Math.round(width * 0.8);
+                  height = Math.round(height * 0.8);
+                  if (width < 100) {
+                    runBtn.removeAttribute("disabled");
+                    return;
+                  }
+                  attempt();
+                }
+              });
+            }
+            step();
+          }
+          function finish(blob) {
+            if (outUrl) window.URL.revokeObjectURL(outUrl);
+            outUrl = window.URL.createObjectURL(blob);
+            afterImg.src = outUrl;
+            afterSize.textContent = fmt(blob.size);
+            afterDims.textContent = " · " + width + "×" + height;
+            downloadEl.href = outUrl;
+            show(resultsEl);
+            show(downloadRow);
+            runBtn.removeAttribute("disabled");
+          }
+          attempt();
+        }
+        function reset() {
+          bitmap = null;
+          hide(resultsEl);
+          hide(downloadRow);
+          fileInput.value = "";
+          clearErrors();
+        }
+        fileInput.addEventListener("change", function () {
+          toImage(this.files && this.files[0]);
+        });
+        runBtn.addEventListener("click", compress);
+        resetBtn.addEventListener("click", reset);
+      })();
+    </script>
+    <script src="i18n/as.js"></script>
+    <script src="i18n/bn.js"></script>
+    <script src="i18n/en.js"></script>
+    <script src="i18n/gu.js"></script>
+    <script src="i18n/hi.js"></script>
+    <script src="i18n/kn.js"></script>
+    <script src="i18n/ml.js"></script>
+    <script src="i18n/mr.js"></script>
+    <script src="i18n/pa.js"></script>
+    <script src="i18n/ta.js"></script>
+    <script src="i18n/te.js"></script>
+    <script src="i18n/ur.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

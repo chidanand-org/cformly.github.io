@@ -1,0 +1,63 @@
+/* ============================================================
+   GENERATED FILE — do not edit by hand (roadmap 168).
+   Emitted by: node scripts/generate-css-tokens.mjs
+   Source of truth: packages/ui/src/index.ts (@cformly/ui palette)
+   Consume via var(--cf-*) after this file is loaded. The token
+   drift test fails if a palette hex is hand-copied elsewhere.
+   ============================================================ */
+
+/* Light (default) */
+:root {
+    --cf-paper: #F4EFE4;
+    --cf-surface: #FFFFFF;
+    --cf-surface-muted: #ECE6D8;
+    --cf-hairline: #D9CFBA;
+    --cf-ink: #0E1A22;
+    --cf-ink-muted: #56636D;
+    --cf-primary: #0E5FB0;
+    --cf-primary-deep: #094A8A;
+    --cf-primary-tint: #E6EEF8;
+    --cf-passport: #14263F;
+    --cf-passport-deep: #0B1726;
+    --cf-passport-tint: #DDE4EF;
+    --cf-on-passport-tint: #14263F;
+    --cf-marigold: #E69A2E;
+    --cf-marigold-deep: #8A5608;
+    --cf-marigold-tint: #F7E9D2;
+    --cf-success: #1E7A4E;
+    --cf-success-tint: #E3F1E9;
+    --cf-danger: #B52F2F;
+    --cf-danger-tint: #F9E7E7;
+    --cf-warning: #9A4A06;
+    --cf-warning-tint: #F7EBD8;
+    --cf-on-primary: #FFFFFF;
+}
+
+/* Dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+      --cf-paper: #0E151C;
+      --cf-surface: #172029;
+      --cf-surface-muted: #1D2731;
+      --cf-hairline: #2A3640;
+      --cf-ink: #E9EEF0;
+      --cf-ink-muted: #97A4AC;
+      --cf-primary: #5AA6EC;
+      --cf-primary-deep: #3E8EDC;
+      --cf-primary-tint: #15293B;
+      --cf-passport: #243C5E;
+      --cf-passport-deep: #16263C;
+      --cf-passport-tint: #1B2A40;
+      --cf-on-passport-tint: #A9C0DE;
+      --cf-marigold: #EBB25C;
+      --cf-marigold-deep: #F2C879;
+      --cf-marigold-tint: #2F2516;
+      --cf-success: #43C07E;
+      --cf-success-tint: #1C3326;
+      --cf-danger: #E26767;
+      --cf-danger-tint: #381F1F;
+      --cf-warning: #E3A65E;
+      --cf-warning-tint: #332618;
+      --cf-on-primary: #0C1419;
+  }
+}

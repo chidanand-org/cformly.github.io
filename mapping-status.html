@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form mapping status — Cformly</title>
+    <meta
+      name="description"
+      content="Live freshness of the FRRO Form III field mapping the Cformly extension serves: active version, last verification, signature presence, canary share."
+    />
+    <!-- Roadmap 75: operator/user visibility for the signed mapping update
+         channel (P3.3). Root-only, noindex utility page: the copy is terse
+         technical English and the values are machine-rendered, so it carries
+         no translatable i18n keys (the marketing pages own the ×12 locales).
+         Zero analytics, zero tracking: the ONLY network request is the
+         public, unauthenticated, no-store status probe. -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="https://cformly.com/favicon.png" />
+    <meta name="theme-color" content="#14263F" />
+    <link rel="stylesheet" href="https://cformly.com/styles.css" />
+    <style>
+      .ms-main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 72px var(--gutter) 48px;
+      }
+      .ms-main h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        margin: 0 0 0.75rem;
+      }
+      .ms-main > p {
+        color: var(--ink-2);
+        margin: 0 0 1.5rem;
+        max-width: 38em;
+      }
+      .ms-state {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.85rem;
+        padding: 10px 14px;
+        border-radius: var(--r-control);
+        margin: 0 0 1rem;
+        border: 1px solid var(--hairline);
+        background: var(--surface-2);
+        color: var(--ink-2);
+      }
+      .ms-state.ok {
+        border-color: var(--success);
+        color: var(--success);
+        background: var(--surface);
+      }
+      .ms-state.down {
+        border-color: var(--danger);
+        color: var(--danger);
+        background: var(--danger-tint);
+        font-weight: 600;
+      }
+      .ms-grid {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 10px 24px;
+        margin: 0;
+      }
+      .ms-grid dt {
+        color: var(--ink-2);
+        font-size: 0.9rem;
+      }
+      .ms-grid dd {
+        margin: 0;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 1rem;
+        color: var(--ink);
+        overflow-wrap: anywhere;
+      }
+      .ms-note {
+        margin-top: 1.75rem;
+        font-size: 0.85rem;
+        color: var(--ink-3);
+        max-width: 42em;
+      }
+      .ms-note a {
+        color: var(--brand);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="https://cformly.com/" aria-label="Cformly home">
+          <img
+            src="https://cformly.com/assets/logo.svg"
+            class="brand-mark"
+            alt=""
+            aria-hidden="true"
+            width="30"
+            height="30"
+          />
+          Cformly
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="https://cformly.com/setup.html">Setup guide</a>
+          <a href="https://cformly.com/form-c.html">Form III</a>
+          <a href="https://cformly.com/privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ms-main">
+      <h1>Form mapping status</h1>
+      <p>
+        Live freshness of the FRRO Form III field mapping that the Cformly
+        extension serves. This page fetches the public, unauthenticated status
+        endpoint directly from your browser — nothing is stored, logged, or
+        tracked.
+      </p>
+
+      <p class="ms-state" id="ms-state" role="status" aria-live="polite">
+        Checking…
+      </p>
+      <dl class="ms-grid" id="ms-grid" hidden>
+        <dt>Active mapping version</dt>
+        <dd id="ms-version">—</dd>
+        <dt>Last verified</dt>
+        <dd id="ms-verified">—</dd>
+        <dt>Signature present</dt>
+        <dd id="ms-signature">—</dd>
+        <dt>Canary rollout share</dt>
+        <dd id="ms-canary">—</dd>
+      </dl>
+
+      <noscript>
+        <p class="ms-state down">
+          JavaScript is required to query the live status from your browser.
+          You can check it manually by opening the endpoint itself:
+          api.cformly.com/api/form-mapping/status
+        </p>
+      </noscript>
+
+      <p class="ms-note">
+        The extension re-checks this mapping automatically and keeps filing
+        from a bundled copy when this service is unreachable — a degraded fill
+        is always marked on the filing panel. Endpoint:
+        <a
+          href="https://api.cformly.com/api/form-mapping/status"
+          rel="noopener"
+          >api.cformly.com/api/form-mapping/status</a
+        >
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span>© 2026 Cformly. All rights reserved.</span>
+          <span>Not affiliated with the FRRO or the Government of India.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var ENDPOINT =
+          "https://api.cformly.com/api/form-mapping/status";
+        var stateEl = document.getElementById("ms-state");
+        var gridEl = document.getElementById("ms-grid");
+        function fail(message) {
+          stateEl.textContent = message;
+          stateEl.className = "ms-state down";
+          gridEl.hidden = true;
+        }
+        // 8s abort: the status endpoint is no-store and tiny — slower means
+        // down, and the page says so instead of spinning.
+        var controller = new AbortController();
+        var timer = setTimeout(function () {
+          controller.abort();
+        }, 8000);
+        fetch(ENDPOINT, {
+          signal: controller.signal,
+          headers: { accept: "application/json" },
+        })
+          .then(function (res) {
+            clearTimeout(timer);
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+          })
+          .then(function (s) {
+            if (
+              typeof s.activeVersion !== "number" ||
+              typeof s.lastVerified !== "string"
+            ) {
+              throw new Error("unexpected shape");
+            }
+            var verified = new Date(s.lastVerified);
+            var verifiedText = isNaN(verified.getTime())
+              ? s.lastVerified
+              : verified.toLocaleString() + " (local time)";
+            document.getElementById("ms-version").textContent =
+              "v" + s.activeVersion;
+            document.getElementById("ms-verified").textContent = verifiedText;
+            document.getElementById("ms-signature").textContent =
+              s.signaturePresent ? "yes (Ed25519)" : "MISSING";
+            document.getElementById("ms-canary").textContent =
+              typeof s.canaryPercent === "number"
+                ? s.canaryPercent + "%"
+                : "—";
+            stateEl.textContent =
+              "Live — fetched from the mapping service just now.";
+            stateEl.className = "ms-state ok";
+            gridEl.hidden = false;
+          })
+          .catch(function () {
+            fail(
+              "Cannot reach the mapping service. The extension keeps filing with its bundled mapping; degraded fills are marked on the filing panel.",
+            );
+          });
+      })();
+    </script>
+  </body>
+</html>

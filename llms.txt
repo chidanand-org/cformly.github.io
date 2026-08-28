@@ -1,0 +1,64 @@
+# Cformly
+
+> The front desk's 24-hour register: an FRRO Form III (formerly Form C) filing assistant for Indian hotels, guest houses, and homestays.
+
+Cformly helps hotel front desks register foreign guests with the FRRO
+(Foreigners Regional Registration Office) within the legally required 24
+hours. The mobile app scans the passport and visa with open-source OCR
+running entirely on the device, shows every extracted field on one review
+screen, and a free browser extension auto-fills the FRRO portal form inside
+the host's own browser session. The human host always solves the CAPTCHA and
+attaches the guest photo before submitting.
+
+## Key facts
+
+- Filing obligation: every accommodation hosting a foreign guest must report
+  arrivals — and departures — within 24 hours (Immigration and Foreigners
+  Act 2025, §8(1)); the form formerly called Form C is now Form III.
+- Privacy: passports, visas, and guest photos are captured, read, and stored
+  only on the hotel's phone (encrypted, SQLCipher). No document image or
+  extracted field is ever uploaded to any server, including Cformly's.
+  Compliant with India's DPDP Act 2023.
+- OCR: open-source, on-device only. No third-party AI services.
+- The browser extension works only on the official FRRO portal page the host
+  has open, stores no credentials and no personal data, and never submits
+  anything — CAPTCHA and photo stay with the host.
+- Languages: English, Hindi, Kannada, Tamil, Telugu, Malayalam, Punjabi,
+  Marathi, Urdu, Bengali, Gujarati, and Assamese. Per-language pages exist
+  under /hi/, /ta/, /te/, /ml/, /kn/, /pa/, /mr/, /ur/, /bn/, /gu/, /as/.
+- Status: free, in invite-only testing with real front desks; App
+  Store / Google Play listings are coming soon.
+- Affiliation: Cformly is an independent filing assistant. It is not
+  affiliated with or endorsed by the FRRO or the Government of India; the
+  host remains legally responsible for accurate, timely filing.
+
+## Pages
+
+- [Home](https://cformly.com/): product overview — how Cformly works, why it
+  beats manual portal entry, privacy commitments, FAQ.
+- [Setup guide](https://cformly.com/setup.html): three-step setup (app,
+  extension, first filing) and the first filing, move by move.
+- [Form III guide](https://cformly.com/form-c.html): what Form III is, the
+  24-hour rule, who must file, and how the portal works.
+- [FRRO portal registration guide](https://cformly.com/hotel-registration.html):
+  how to create the accommodation account on the FRRO portal — what to
+  prepare, what the form asks, and the FRRO-office fallback when it fails.
+- [Photo compressor](https://cformly.com/compress.html): free client-side
+  tool that shrinks a guest photo below the portal's 50 KB limit; runs
+  entirely in the browser, no upload.
+- [Browser extension](https://cformly.com/ext.html): how the fill works
+  inside the host's own session; what the extension never does.
+- [Privacy policy](https://cformly.com/privacy.html): DPDP Act 2023 notice —
+  what is collected, where data is stored, guest rights.
+- [Guest privacy badge](https://cformly.com/trust.html): printable reception
+  card for foreign guests explaining what happens to their passport data.
+- [Terms of service](https://cformly.com/terms.html): acceptance, host
+  obligations, data accuracy, liability.
+- [Security](https://cformly.com/.well-known/security.txt): security contact
+  and policy.
+
+## Contact
+
+- General: support@cformly.com
+- Security: security@cformly.com
+- Privacy / DPO: dpo@cformly.com

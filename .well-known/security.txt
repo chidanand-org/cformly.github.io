@@ -1,0 +1,8 @@
+Contact: mailto:security@cformly.com
+Expires: 2027-08-27T23:59:59IST
+Preferred-Languages: en, hi
+Canonical: https://cformly.com/.well-known/security.txt
+Policy: https://cformly.com/privacy
+# Cformly handles passport and visa data on-device (DPDP Act 2023) — reports
+# about the mobile app, browser extension, or this site are all welcome here.
+# Please do not include guest personal data in reports.

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <title data-i18n-title="meta.extTitle">
+      The Cformly browser extension — Cformly
+    </title>
+    <meta
+      name="description"
+      data-i18n-meta="meta.extDesc"
+      content="How the free Cformly extension fills the FRRO portal form inside your own browser session — no credentials, no PII, no server relay."
+    />
+    <meta
+      property="og:title"
+      data-i18n-meta="meta.extTitle"
+      content="The Cformly browser extension — Cformly"
+    />
+    <meta
+      property="og:description"
+      data-i18n-meta="meta.extDesc"
+      content="How the free Cformly extension fills the FRRO portal form inside your own browser session — no credentials, no PII, no server relay."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cformly" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="hi_IN" />
+    <meta property="og:locale:alternate" content="kn_IN" />
+    <meta property="og:locale:alternate" content="ta_IN" />
+    <meta property="og:locale:alternate" content="te_IN" />
+    <meta property="og:locale:alternate" content="ml_IN" />
+    <meta property="og:locale:alternate" content="pa_IN" />
+    <meta property="og:locale:alternate" content="mr_IN" />
+    <meta property="og:locale:alternate" content="ur_IN" />
+    <meta property="og:locale:alternate" content="bn_IN" />
+    <meta property="og:locale:alternate" content="gu_IN" />
+    <meta property="og:locale:alternate" content="as_IN" />
+    <meta property="og:url" content="https://cformly.com/ext.html" />
+    <meta property="og:image" content="https://cformly.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="The Cformly browser extension — Cformly"
+    />
+    <meta
+      name="twitter:description"
+      content="How the free Cformly extension fills the FRRO portal form inside your own browser session — no credentials, no PII, no server relay."
+    />
+    <meta name="twitter:image" content="https://cformly.com/og-image.jpg" />
+    <link rel="canonical" href="https://cformly.com/ext.html" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon-152.png" />
+    <meta name="theme-color" content="#14263F" />
+<link rel="stylesheet" href="styles.css" />
+    <!-- Roadmap 196: extension trust page. Every claim below is sourced from
+         copy already public or in-repo: privacy.html use3, trust.html
+         point5, setup.html step2; the extension's own README
+         (apps/extension/README.md: clipboard read on explicit click, no
+         clipboardWrite, single-site host permission, "stores no PII",
+         deleted server relay) and the Ed25519 fail-closed mapping gate
+         (apps/extension/src/mapping.ts, S8). -->
+    <style>
+      .ext-never li {
+        position: relative;
+        padding-left: 1.7rem;
+        margin-bottom: 0.65rem;
+      }
+      .ext-never li::before {
+        content: "✗";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 700;
+        color: #b3261e;
+      }
+      .ext-sig {
+        border-left: 3px solid #1a7f4b;
+        padding: 0.25rem 0 0.25rem 1rem;
+        margin: 1rem 0;
+      }
+      .ext-sig p {
+        margin: 0 0 0.5rem;
+      }
+      .ext-sig-note {
+        font-size: 0.85rem;
+        color: #5b6472;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Cformly home"
+          data-i18n-aria-label="brand.aria"
+        >
+          <img
+            src="assets/logo.svg"
+            class="brand-mark"
+            alt=""
+            aria-hidden="true"
+            width="30"
+            height="30"
+          />
+          Cformly
+        </a>
+        <nav
+          id="nav-links"
+          class="nav-links"
+          aria-label="Primary"
+          data-i18n-aria-label="nav.ariaPrimary"
+        >
+          <a href="index.html#how" data-i18n="nav.how">How it works</a>
+          <a href="setup.html" data-i18n="nav.setup">Setup guide</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+        <button
+          type="button"
+          class="lang-toggle"
+          data-i18n-toggle
+          aria-pressed="false"
+          hidden
+          data-i18n-aria-label="lang.toggleAria"
+        >
+          हिन्दी
+        </button>
+        <noscript><p class="noscript-lang-note" style="font-size:0.85rem;color:#6b7280">Language switch requires JavaScript — this site is in English without it.</p></noscript>
+        <a
+          class="btn nav-cta"
+          href="index.html#get-started"
+          data-i18n="nav.cta"
+          >Get early access</a
+        >
+      </div>
+    </header>
+
+    <main id="main" class="legal-main" tabindex="-1">
+      <a class="back" href="index.html">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        <span data-i18n="back.toHome">Back to Cformly</span>
+      </a>
+      <h1 data-i18n="ext.title">
+        The extension: fill inside your own session
+      </h1>
+      <p class="lede" data-i18n="ext.lede">
+        The free Cformly browser extension writes the reviewed guest fields
+        into the FRRO portal form — in your own tab, under your own login. It
+        never touches credentials or personal data.
+      </p>
+
+      <h2 data-i18n="ext.howTitle">How the fill works</h2>
+      <ol class="setup-walk">
+        <li data-i18n="ext.how1">
+          You send the reviewed fields from the Cformly app to yourself —
+          email or WhatsApp. The details travel through the message you send,
+          never through our servers.
+        </li>
+        <li data-i18n="ext.how2">
+          On the FRRO portal page, you click the Cformly button and press
+          Fill. The extension reads the payload only on that explicit click.
+        </li>
+        <li data-i18n="ext.how3">
+          It writes the fields into the form open in your own browser tab,
+          where you can watch and correct every one.
+        </li>
+        <li data-i18n="ext.how4">
+          You type the security code, attach the photo, and press Save. The
+          filing is yours — Cformly never submits anything.
+        </li>
+      </ol>
+
+      <h2 data-i18n="ext.neverTitle">What the extension never does</h2>
+      <ul class="ext-never">
+        <li data-i18n="ext.never1">
+          It never stores credentials or guest PII — nothing persists after
+          the fill.
+        </li>
+        <li data-i18n="ext.never2">
+          It never writes to your clipboard, and it never sends anything to
+          Cformly servers — there is no relay.
+        </li>
+        <li data-i18n="ext.never3">
+          It operates on one site only: the official FRRO portal page you have
+          open.
+        </li>
+        <li data-i18n="ext.never4">
+          It never solves the CAPTCHA or attaches the photo — those stay with
+          the host, as the portal requires.
+        </li>
+      </ul>
+
+      <h2 data-i18n="ext.sigTitle">Verified form mappings</h2>
+      <p data-i18n="ext.sigBody">
+        The portal's layout changes sometimes. The fill instructions the
+        extension loads (the form mapping) carry an Ed25519 signature checked
+        against a public key built into the extension — if a mapping doesn't
+        verify, the extension refuses to use it.
+      </p>
+      <div class="ext-sig">
+        <p class="ext-sig-note" data-i18n="ext.sigNote">
+          Fail closed, by design: an unverifiable mapping is never applied.
+        </p>
+      </div>
+
+      <p class="setup-note">
+        <a href="setup.html" class="btn btn-primary" data-i18n="ext.cta"
+          >Read the setup guide</a
+        >
+        ·
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a>
+      </p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span data-i18n="footer.copyright"
+            >© 2026 Cformly. All rights reserved.</span
+          >
+          <span data-i18n="footer.notAffiliated"
+            >Not affiliated with the FRRO or the Government of India.</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="i18n/as.js"></script>
+    <script src="i18n/bn.js"></script>
+    <script src="i18n/en.js"></script>
+    <script src="i18n/gu.js"></script>
+    <script src="i18n/hi.js"></script>
+    <script src="i18n/kn.js"></script>
+    <script src="i18n/ml.js"></script>
+    <script src="i18n/mr.js"></script>
+    <script src="i18n/pa.js"></script>
+    <script src="i18n/ta.js"></script>
+    <script src="i18n/te.js"></script>
+    <script src="i18n/ur.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

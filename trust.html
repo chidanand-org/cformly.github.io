@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <title data-i18n-title="trust.metaTitle">
+      Guest Privacy Badge — Cformly
+    </title>
+    <meta
+      name="description"
+      data-i18n-meta="trust.metaDesc"
+      content="A printable reception card for foreign guests: your passport details are processed on the hotel's phone and never uploaded anywhere."
+    />
+    <meta property="og:title" content="Guest Privacy Badge — Cformly" />
+    <meta
+      property="og:description"
+      content="A printable reception card for foreign guests: your passport details are processed on the hotel's phone and never uploaded anywhere."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cformly" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="hi_IN" />
+    <meta property="og:locale:alternate" content="kn_IN" />
+    <meta property="og:locale:alternate" content="ta_IN" />
+    <meta property="og:locale:alternate" content="te_IN" />
+    <meta property="og:locale:alternate" content="ml_IN" />
+    <meta property="og:locale:alternate" content="pa_IN" />
+    <meta property="og:locale:alternate" content="mr_IN" />
+    <meta property="og:locale:alternate" content="ur_IN" />
+    <meta property="og:locale:alternate" content="bn_IN" />
+    <meta property="og:locale:alternate" content="gu_IN" />
+    <meta property="og:locale:alternate" content="as_IN" />
+    <meta property="og:url" content="https://cformly.com/trust.html" />
+    <meta property="og:image" content="https://cformly.com/og-image.jpg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Guest Privacy Badge — Cformly" />
+    <meta
+      name="twitter:description"
+      content="A printable reception card for foreign guests: your passport details are processed on the hotel's phone and never uploaded anywhere."
+    />
+    <meta name="twitter:image" content="https://cformly.com/og-image.jpg" />
+    <link rel="canonical" href="https://cformly.com/trust.html" />
+    <link rel="alternate" hreflang="en" href="https://cformly.com/trust.html" />
+    <link rel="alternate" hreflang="hi" href="https://cformly.com/hi/trust.html" />
+    <link rel="alternate" hreflang="kn" href="https://cformly.com/kn/trust.html" />
+    <link rel="alternate" hreflang="ta" href="https://cformly.com/ta/trust.html" />
+    <link rel="alternate" hreflang="te" href="https://cformly.com/te/trust.html" />
+    <link rel="alternate" hreflang="ml" href="https://cformly.com/ml/trust.html" />
+    <link rel="alternate" hreflang="pa" href="https://cformly.com/pa/trust.html" />
+    <link rel="alternate" hreflang="mr" href="https://cformly.com/mr/trust.html" />
+    <link rel="alternate" hreflang="ur" href="https://cformly.com/ur/trust.html" />
+    <link rel="alternate" hreflang="bn" href="https://cformly.com/bn/trust.html" />
+    <link rel="alternate" hreflang="gu" href="https://cformly.com/gu/trust.html" />
+    <link rel="alternate" hreflang="as" href="https://cformly.com/as/trust.html" />
+    <link rel="alternate" hreflang="x-default" href="https://cformly.com/trust.html" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon-152.png" />
+    <meta name="theme-color" content="#14263F" />
+<link rel="stylesheet" href="styles.css" />
+    <!--
+      Roadmap 71: printable guest-facing trust mark. Self-contained — printing
+      needs NO JavaScript (Ctrl/Cmd+P works with JS off); the scripts below
+      only add the language toggle. Print CSS lives here so the page stays
+      portable if the shared sheet changes.
+    -->
+    <style>
+      .trust-badge {
+        border: 3px solid var(--passport);
+        border-radius: 18px;
+        padding: 2.2rem 2rem;
+        margin: 1.5rem 0 2rem;
+        max-width: 46rem;
+        background: var(--surface);
+      }
+      .trust-badge-head {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        border-bottom: 2px solid var(--passport);
+        padding-bottom: 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .trust-badge-head svg {
+        flex: none;
+      }
+      .trust-badge-head h2 {
+        margin: 0;
+        font-family: "Fraunces", serif;
+        font-size: 1.45rem;
+        line-height: 1.25;
+      }
+      .trust-badge p {
+        margin: 0 0 1rem;
+      }
+      .trust-badge ul {
+        margin: 0 0 1.2rem;
+        padding-left: 0;
+        list-style: none;
+      }
+      .trust-badge li {
+        position: relative;
+        padding-left: 1.7rem;
+        margin-bottom: 0.65rem;
+      }
+      .trust-badge li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 700;
+        color: #1a7f4b;
+      }
+      .trust-badge-note {
+        font-size: 0.85rem;
+        color: #5b6472;
+        border-top: 1px solid #d8dee7;
+        padding-top: 0.8rem;
+        margin-bottom: 0;
+      }
+      .trust-print-hint {
+        font-size: 0.9rem;
+        color: #5b6472;
+      }
+      @media print {
+        @page {
+          size: auto;
+          margin: 14mm;
+        }
+        .trust-badge {
+          border-width: 3px;
+          border-color: #000000;
+          border-radius: 0;
+          max-width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+        .trust-badge-head {
+          border-color: #000000;
+        }
+        .trust-badge li::before {
+          color: #000000;
+        }
+        .trust-badge-note {
+          color: #000000;
+          border-color: #000000;
+        }
+        .trust-print-hint {
+          display: none;
+        }
+        .legal-main .back,
+        .legal-main .updated {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Cformly home"
+          data-i18n-aria-label="brand.aria"
+        >
+          <img
+            src="assets/logo.svg"
+            class="brand-mark"
+            alt=""
+            aria-hidden="true"
+            width="30"
+            height="30"
+          />
+          Cformly
+        </a>
+        <nav
+          id="nav-links"
+          class="nav-links"
+          aria-label="Primary"
+          data-i18n-aria-label="nav.ariaPrimary"
+        >
+          <a href="index.html#how" data-i18n="nav.how">How it works</a>
+          <a href="setup.html" data-i18n="nav.setup">Setup guide</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-menu-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Menu"
+          data-i18n-aria-label="nav.menuAria"
+        >
+          <span class="nav-menu-bar" aria-hidden="true"></span>
+          <span class="nav-menu-bar" aria-hidden="true"></span>
+          <span class="nav-menu-bar" aria-hidden="true"></span>
+        </button>
+        <button
+          type="button"
+          class="lang-toggle"
+          data-i18n-toggle
+          aria-pressed="false"
+          hidden
+          data-i18n-aria-label="lang.toggleAria"
+        >
+          हिन्दी
+        </button>
+        <noscript><p class="noscript-lang-note" style="font-size:0.85rem;color:#6b7280">Language switch requires JavaScript — this site is in English without it.</p></noscript>
+        <a
+          class="btn nav-cta"
+          href="index.html#get-started"
+          data-i18n="nav.cta"
+          >Get early access</a
+        >
+      </div>
+    </header>
+
+    <main id="main" class="legal-main" tabindex="-1">
+      <a class="back" href="index.html">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+        <span data-i18n="back.toHome">Back to Cformly</span>
+      </a>
+      <p class="updated" data-i18n="legal.updated">Last updated: August 2026</p>
+      <h1 data-i18n="trust.title">Guest Privacy Badge</h1>
+      <p class="lede" data-i18n="trust.lede">
+        A card hotels can print and keep at reception, so foreign guests can
+        see exactly what happens to their passport details.
+      </p>
+      <p class="trust-print-hint" data-i18n="trust.printHint">
+        Print this page (Ctrl/Cmd + P) — it fits A4 and Letter, and prints
+        without any scripts or colors.
+      </p>
+
+      <!-- The badge itself: every claim below is the same commitment the
+           privacy notice (privacy.html) makes, in plain words for a guest. -->
+      <section class="trust-badge" aria-label="Guest privacy card">
+        <div class="trust-badge-head">
+          <svg
+            width="34"
+            height="34"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="var(--passport)"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"
+            />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          <h2 data-i18n="trust.badgeTitle">
+            Your passport never left this phone
+          </h2>
+        </div>
+        <ul>
+          <li data-i18n="trust.point1">
+            Your passport and visa are scanned on the hotel's own phone. The
+            photos and every extracted detail stay on that one device, in an
+            encrypted store.
+          </li>
+          <li data-i18n="trust.point2">
+            No document image or passport detail is uploaded to any server —
+            not to the hotel's, not to Cformly's.
+          </li>
+          <li data-i18n="trust.point3">
+            Reading your form is done by open-source software running entirely
+            on the device — no third-party AI or cloud service ever sees it.
+          </li>
+          <li data-i18n="trust.point4">
+            Your details leave the phone only once: to pre-fill the official
+            FRRO Form C portal page in the hotel's own browser session, for
+            the registration the law requires within 24 hours.
+          </li>
+          <li data-i18n="trust.point5">
+            A person — not software — always completes the security check and
+            submits the form. The hotel checks each field before saving.
+          </li>
+        </ul>
+        <p data-i18n="trust.close">
+          Hotels must register foreign guests with the FRRO within 24 hours of
+          check-in — this is the law, and it happens without your data ever
+          being copied to the cloud.
+        </p>
+        <p class="trust-badge-note" data-i18n="trust.note">
+          Cformly is a tool used by the hotel. It is not affiliated with the
+          FRRO or the Government of India. Full details:
+          cformly.com/privacy
+        </p>
+      </section>
+
+      <h2 data-i18n="trust.askH">Questions a guest may ask</h2>
+      <ul>
+        <li data-i18n="trust.ask1">
+          "Can I see what was filled?" — Yes. Ask the front desk to show the
+          filled Form C page before it is saved.
+        </li>
+        <li data-i18n="trust.ask2">
+          "Where is my data deleted?" — Everything stays on the hotel's phone
+          in an encrypted on-device store; the hotel manages its retention.
+        </li>
+        <li data-i18n="trust.ask3">
+          "Who do I contact?" — Write to dpo@cformly.com for any privacy
+          question; the hotel's front desk can help first.
+        </li>
+      </ul>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span data-i18n="footer.copyright"
+            >© 2026 Cformly. All rights reserved.</span
+          >
+          <span data-i18n="footer.notAffiliated"
+            >Not affiliated with the FRRO or the Government of India.</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="i18n/as.js"></script>
+    <script src="i18n/bn.js"></script>
+    <script src="i18n/en.js"></script>
+    <script src="i18n/gu.js"></script>
+    <script src="i18n/hi.js"></script>
+    <script src="i18n/kn.js"></script>
+    <script src="i18n/ml.js"></script>
+    <script src="i18n/mr.js"></script>
+    <script src="i18n/pa.js"></script>
+    <script src="i18n/ta.js"></script>
+    <script src="i18n/te.js"></script>
+    <script src="i18n/ur.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
