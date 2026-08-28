@@ -270,6 +270,8 @@ window.CFORMLY_I18N["en"] = {
   "setup.step1Body":
     "Get Cformly from Google Play or the App Store and sign in with your email. It's invite-only internal testing for now — your property's invite link arrives by email. Add your property once — the address, FRRO office, and contact details pre-fill every form after that.",
   "setup.step2Title": "2 · Add the extension on the computer you file from",
+  "setup.step2Download": "Download the Cformly extension (.zip)",
+  "setup.step2Checksums": "SHA-256 checksums",
   "setup.step2Body":
     "On the computer you file from, add the free Cformly extension. The Chrome Web Store listing is coming soon — until then use only the official Cformly zip: download it, open chrome://extensions, temporarily turn on Developer mode, click Load unpacked and pick the unzipped folder, then turn Developer mode off again (this temporary step is only needed until the store listing is live). It works only on the FRRO portal page you have open — the CAPTCHA and the guest photo always stay with you. The guest's details travel through the message you send yourself — never through our servers.",
   "setup.step3Title": "3 · File your first guest",
@@ -421,4 +423,32 @@ window.CFORMLY_I18N["en"] = {
   "hotelreg.cformlyBody": "Once approved, Cformly carries the rest: scan passport and visa on the phone, review on one screen, and the free extension fills the portal form in your own session. You solve the CAPTCHA and attach the photo.",
   "hotelreg.formcLink": "The Form III guide: the 24-hour register",
   "hotelreg.navLink": "FRRO portal registration guide",
+
+  /* DPDP posture page (roadmap 193) */
+  "meta.dpdpTitle": "Guest data, on-device by design — Cformly",
+  "meta.dpdpDesc":
+    "Our DPDP Act 2023 posture in plain words: on-device open-source OCR, passports and visas that never leave the phone, a human filing on the portal — with proof you can check today.",
+  "dpdp.title": "Guest data, on-device by design",
+  "dpdp.lede":
+    "Where Cformly stands on the DPDP Act 2023 — and the features in the app today that back it up.",
+  "dpdp.howTitle": "The posture, in four points",
+  "dpdp.point1":
+    "Passports and visas are read by open-source OCR running entirely on the phone. No third-party AI, no cloud OCR — and no document image is ever uploaded to any server, including ours.",
+  "dpdp.point2":
+    "Guest records, photos, and extracted fields live only in an encrypted on-device database (SQLCipher; the key stays in the phone's keystore, hardware-backed where available).",
+  "dpdp.point3":
+    "Filing happens in the hotel's own browser: the extension fills the portal form in the host's logged-in session, and a person solves the CAPTCHA, attaches the photo, and submits. Cformly never submits anything.",
+  "dpdp.point4":
+    "Your rights are built in: export or delete everything from Settings at any time — access, correction, and erasure as the DPDP Act 2023 lays out.",
+  "dpdp.whenTitle": "Where the DPDP Act stands",
+  "dpdp.whenBody":
+    "The DPDP Act 2023 has commenced only in part: most substantive duties for data fiduciaries, and most operational rules, are scheduled to commence on 13 May 2027. Cformly is built to those requirements today — on-device processing, purpose-limited data, consent artifacts. These are stated practices, not certifications.",
+  "dpdp.proofTitle": "Proof you can check today",
+  "dpdp.proof1":
+    "Consent receipt export — Settings → Data & Privacy exports exactly what was consented to and when: the data-practice scope lines, a timestamp, and the app version. Ready to share with a guest or an auditor.",
+  "dpdp.proof2":
+    "Readiness templates — a hotel retention-policy template and a DPIA template, written around how Cformly actually processes data, ship alongside the product.",
+  "dpdp.proof3":
+    "Guest privacy badge — a printable reception card that tells guests in plain words what happens to their passport details.",
+  "footer.dpdp": "DPDP posture",
 };

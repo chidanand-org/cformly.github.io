@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-08-28T16:57:19.351Z",
+  "files": {
+    "cformly-extension-0.1.0.zip": {
+      "sha256": "79abe58bd0318467d2fe0ff6d31a0cedaf55da45e5c85e6646ada7388cc8da52",
+      "bytes": 1727619
+    },
+    "cformly-extension.zip": {
+      "sha256": "79abe58bd0318467d2fe0ff6d31a0cedaf55da45e5c85e6646ada7388cc8da52",
+      "bytes": 1727619
+    }
+  }
+}

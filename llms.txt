@@ -52,6 +52,9 @@ attaches the guest photo before submitting.
   what is collected, where data is stored, guest rights.
 - [Guest privacy badge](https://cformly.com/trust.html): printable reception
   card for foreign guests explaining what happens to their passport data.
+- [DPDP posture](https://cformly.com/dpdp.html): where Cformly stands on the
+  DPDP Act 2023 — on-device processing, the 13 May 2027 commencement of full
+  duties, consent-receipt export and readiness templates.
 - [Terms of service](https://cformly.com/terms.html): acceptance, host
   obligations, data accuracy, liability.
 - [Security](https://cformly.com/.well-known/security.txt): security contact
