@@ -80,7 +80,7 @@ var SUPPORTED_LANGS = Object.keys(translations).filter(function (k) {
 
     var htmls = document.querySelectorAll("[data-i18n-html]");
     for (var j = 0; j < htmls.length; j++) {
-      htmls[j].textContent = lookup(htmls[j].dataset.i18nHtml, lang);
+      htmls[j].innerHTML = lookup(htmls[j].dataset.i18nHtml, lang);
     }
 
     var arias = document.querySelectorAll("[data-i18n-aria-label]");
